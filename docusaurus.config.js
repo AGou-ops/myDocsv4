@@ -28,15 +28,14 @@ const config = {
   },
 
   plugins: [
-  //   [
-  //   '@docusaurus/plugin-sitemap',
-  //   {
-  //     changefreq: 'weekly',
-  //     priority: 0.5,
-  //     ignorePatterns: ['/tags/**'],
-  //     filename: 'sitemap.xml',
-  //   },
-  // ]
+    require.resolve('docusaurus-plugin-image-zoom'),
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        indexBlog: false,
+      },
+    ]
   ],
 
   presets: [
@@ -69,7 +68,7 @@ const config = {
         //   filename: 'sitemap.xml',
         // },
         googleAnalytics: {
-          trackingID: 'UA-xxxxxxx64-1',
+          trackingID: 'G-KQED41RW95',
           anonymizeIP: true,
         },
         pages: {
@@ -107,65 +106,65 @@ const config = {
             label: '✨ 我的博客',
             href: 'https://agou-ops.cn'
           },
-            {
-              type: 'dropdown',
-              label: ' 📖 目录',
-              position: 'right',
-              items: [
-                {
-                  href: '/docs',
-                  label: '🌲 目录树',
-                },
-                {
-                  type: 'html',
-                  value: '<hr style="margin: 0.3rem 0;">',
-                },
-                {
-                  type: 'docSidebar',
-                  sidebarId: 'cloudNative',
-                  label: '☁️ 云原生相关',
-                },
-                {
-                  type: 'docSidebar',
-                  sidebarId: 'linuxBasics',
-                  label: '😊 Linux基础',
-                },
-                {
-                  type: 'docSidebar',
-                  sidebarId: 'programLang',
-                  label: '♨️ 编程语言',
-                },
-                {
-                  type: 'docSidebar',
-                  sidebarId: 'scripts',
-                  label: '🕹️ 脚本相关',
-                },
-                {
-                  type: 'docSidebar',
-                  sidebarId: 'interview',
-                  label: '👨‍⚖️ 面试相关',
-                },
-              ],
-            },
-            {
-              type: 'dropdown',
-              label: '版本',
-              position: 'right',
-              items: [
-                {
-                  label: 'Ver1.0',
-                  href: 'https://agou-ops.cn/myDocs',
-                },
-                                {
-                  label: 'Ver2.0',
-                  href: 'https://agou-ops.cn/myDocsv2',
-                },
-                                {
-                  label: 'Ver3.0',
-                  href: 'https://agou-ops.cn/myDocsv3',
-                },
-              ]
-            },
+          {
+            type: 'dropdown',
+            label: ' 📖 目录',
+            position: 'right',
+            items: [
+              {
+                href: '/docs',
+                label: '🌲 目录树',
+              },
+              {
+                type: 'html',
+                value: '<hr style="margin: 0.3rem 0;">',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'cloudNative',
+                label: '☁️ 云原生相关',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'linuxBasics',
+                label: '😊 Linux基础',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'programLang',
+                label: '♨️ 编程语言',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'scripts',
+                label: '🕹️ 脚本相关',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'interview',
+                label: '👨‍⚖️ 面试相关',
+              },
+            ],
+          },
+          {
+            type: 'dropdown',
+            label: '版本',
+            position: 'right',
+            items: [
+              {
+                label: 'Ver1.0',
+                href: 'https://agou-ops.cn/myDocs',
+              },
+              {
+                label: 'Ver2.0',
+                href: 'https://agou-ops.cn/myDocsv2',
+              },
+              {
+                label: 'Ver3.0',
+                href: 'https://agou-ops.cn/myDocsv3',
+              },
+            ]
+          },
           {
             href: 'https://github.com/AGou-ops',
             position: 'right',
@@ -174,52 +173,69 @@ const config = {
           },
         ],
       },
-      algolia: {
-        appId: '5M8VQRD7W9',
-        apiKey: '2fcdbd0ce638664e7a28cc64939603b9',
-        indexName: 'myDocsv4',
-        contextualSearch: true,
-
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
+      // algolia: {
+      //   appId: '5M8VQRD7W9',
+      //   apiKey: 'abbd7f4bb99510a547c85f0da3c4efca',
+      //   indexName: 'myDocsv4',
+      // },
+      zoom: {
+        selector: '.markdown :not(em) > img',
+        background: {
+          light: 'rgb(255, 255, 255)',
+          dark: 'rgb(50, 50, 50)'
+        },
+        // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+        config: {}
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Docs Releases',
             items: [
-              // {
-              //   label: 'Tutorial',
-              //   to: '/docs/intro',
-              // },
+              {
+                label: 'Version 1.0',
+                href: 'https://agou-ops.cn/myDocs',
+              },
+              {
+                label: 'Version 2.0',
+                href: 'https://agou-ops.cn/myDocsv2',
+              },
+              {
+                label: 'Version 3.0',
+                href: 'https://agou-ops.cn/myDocsv3',
+              },
+              {
+                label: '⭐️Version 4.0',
+                href: 'https://agou-ops.cn/myDocsv4',
+              },
             ],
           },
           {
-            title: 'Community',
+            title: 'Social',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: '⭐️我的博客',
+                href: 'https://agou-ops.cn',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/',
               },
             ],
           },
           {
             title: 'More',
             items: [
-              // {
-              //   label: 'Blog',
-              //   to: '/blog',
-              // },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/AGou-ops',
               },
             ],
           },

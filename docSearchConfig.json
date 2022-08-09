@@ -1,21 +1,18 @@
 {
-    "index_name": "myDocsv3",
+    "index_name": "myDocsv4",
     "start_urls": [
-      "https://agou-ops.cn/myDocsv3"
+      "https://agou-ops.cn/myDocsv4"
     ],
     "stop_urls": [],
     "selectors": {
       "lvl0": {
-        "selector": ".VPLink.active",
+        "selector": "(//ul[contains(@class,'menu__list')]//a[contains(@class, 'menu__link menu__link--sublist menu__link--active')]/text() | //nav[contains(@class, 'navbar')]//a[contains(@class, 'navbar__link--active')]/text())[last()]",
+        "type": "xpath",
         "global": true,
         "default_value": "Documentation"
       },
-      "lvl1": ".VPDoc h1",
-      "lvl2": ".VPDoc h2",
-      "lvl3": ".VPDoc h3",
-      "lvl4": ".VPDoc h4",
-      "lvl5": ".VPDoc h5",
-      "content": ".VPContent p, .VPContent li",
-      "lang": ""
+      "lvl1": "header h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3"
     }
   }
