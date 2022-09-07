@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_docsv_4=self.webpackChunkmy_docsv_4||[]).push([[5773],{53583:a=>{a.exports=JSON.parse('{"title":"\u7f16\u7a0b\u8bed\u8a00","slug":"/category/\u7f16\u7a0b\u8bed\u8a00","permalink":"/docs/category/\u7f16\u7a0b\u8bed\u8a00","navigation":{"next":{"title":"Golang \u57fa\u7840","permalink":"/docs/ProgramLang/Golang/Golang Basic"}}}')}}]);

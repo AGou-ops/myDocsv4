@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_docsv_4=self.webpackChunkmy_docsv_4||[]).push([[4863],{41541:e=>{e.exports=JSON.parse('{"title":"\u811a\u672c\u76f8\u5173","slug":"/category/\u811a\u672c\u76f8\u5173","permalink":"/docs/category/\u811a\u672c\u76f8\u5173","navigation":{"next":{"title":"shell","permalink":"/docs/category/shell-1"}}}')}}]);

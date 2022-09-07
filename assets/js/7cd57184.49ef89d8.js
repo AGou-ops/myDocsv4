@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_docsv_4=self.webpackChunkmy_docsv_4||[]).push([[5163],{53712:e=>{e.exports=JSON.parse('{"title":"Linux\u57fa\u7840","slug":"/category/linux\u57fa\u7840","permalink":"/docs/category/linux\u57fa\u7840","navigation":{"next":{"title":"Ansible","permalink":"/docs/category/ansible"}}}')}}]);
