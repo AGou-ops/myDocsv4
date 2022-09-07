@@ -9,7 +9,7 @@ const config = {
   title: 'AGou\'s Docsv4',
   tagline: 'Welcome to AGou\'s Docs.',
   url: 'https://agou-ops.cn',
-  baseUrl: '/myDocsv4/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
