@@ -26,6 +26,20 @@ function HomepageHeader() {
   );
 }
 
+function Middle() {
+  const { siteConfig } = useDocusaurusContext();
+  return (
+    <div className={styles.centerText}>
+        <Link
+          to="https://baike.baidu.com/item/%E5%B2%82%E8%83%BD%E5%B0%BD%E5%A6%82%E4%BA%BA%E6%84%8F%EF%BC%8C%E4%BD%86%E6%B1%82%E6%97%A0%E6%84%A7%E6%88%91%E5%BF%83"
+        >
+          <p>岂能尽如人意，但求无愧我心。</p>
+        </Link>
+    </div>
+  );
+}
+
+
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -34,7 +48,7 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <Middle />
       </main>
     </Layout>
   );
