@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'AGou\'s Docsv4',
   tagline: 'Welcome to AGou\'s Docs.',
-  url: 'https://agou-ops.cn',
+  url: 'https://docs.agou-ops.cn',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -62,7 +62,7 @@ const config = {
           customCss: require.resolve('./src/css/custom.css'),
         },
         // sitemap: {
-          // gefreq: 'weekly',
+        //   gefreq: 'weekly',
         //   priority: 0.5,
         //   rePatterns: ['/tags/**'],
         //   filename: 'sitemap.xml',
@@ -179,11 +179,29 @@ const config = {
           autoCollapseCategories: true,
         },
       },
-      // algolia: {
-      //   appId: '5M8VQRD7W9',
-      //   apiKey: 'abbd7f4bb99510a547c85f0da3c4efca',
-      //   indexName: 'myDocsv4',
-      // },
+      algolia: {
+        // Algolia 提供的应用 ID
+        appId: '5M8VQRD7W9',
+
+        //  公开 API 密钥：提交它没有危险
+        apiKey: '6a2c773473e3d77a8e761f3f64825c5a',
+
+        indexName: 'myDocsv4',
+
+        // 可选：见下文
+        contextualSearch: true,
+
+        // 可选：声明哪些域名需要用 window.location 型的导航而不是 history.push。 适用于 Algolia 配置会爬取多个文档站点，而我们想要用 window.location.href 在它们之间跳转时。
+        externalUrlRegex: 'external\\.com|domain\\.com',
+
+        // 可选：Algolia 搜索参数
+        searchParameters: {},
+
+        // 可选：搜索页面的路径，默认启用（可以用 `false` 禁用）
+        searchPagePath: 'explore',
+
+        // ……其他 Algolia 参数
+      },
       zoom: {
         selector: '.markdown :not(em) > img',
         background: {
@@ -245,7 +263,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         // dracula,  nightOwl, okaidia
-        // oceanicNext, palenight, synthwave84, 
+        // oceanicNext, palenight, synthwave84,
         // vsDark, duotoneDark, github, nightOwlLight, `okaidia, shadesOfPurple, ultramin, vsLight
         // theme: require('prism-react-renderer/themes/nightOwl'),
         // darkTheme: darkCodeTheme,

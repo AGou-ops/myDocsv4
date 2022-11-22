@@ -1,7 +1,7 @@
 {
     "index_name": "myDocsv4",
     "start_urls": [
-      "https://agou-ops.cn/myDocsv4"
+      "https://docs.agou-ops.cn/"
     ],
     "stop_urls": [],
     "selectors": {

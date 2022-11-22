@@ -17,7 +17,7 @@ const sidebars = {
     {
       type: 'doc',
       id: 'guide/guide',
-      label: '目录导航', 
+      label: '目录导航',
     },
     {
       type: 'link',
@@ -47,7 +47,7 @@ const sidebars = {
   ],
   programLang: [
     {
-      type: 'category', 
+      type: 'category',
       label: '编程语言',
       link: {type: 'generated-index',},
       items: [
@@ -74,7 +74,7 @@ const sidebars = {
   ],
   cloudNative: [
     {
-      type: 'category', 
+      type: 'category',
       label: '云原生相关',
       link: {type: 'generated-index',},
       items: [{
@@ -86,7 +86,7 @@ const sidebars = {
   ],
   interview: [
     {
-      type: 'category', 
+      type: 'category',
       label: '面试相关',
       link: {type: 'doc', id: 'Interview/index'},
       items: [{
@@ -98,7 +98,7 @@ const sidebars = {
   ],
   linuxBasics: [
     {
-      type: 'category', 
+      type: 'category',
       label: 'Linux基础',
       link: {type: 'generated-index',},
       items: [{
@@ -110,7 +110,7 @@ const sidebars = {
   ],
   scripts: [
     {
-      type: 'category', 
+      type: 'category',
       label: '脚本相关',
       link: {type: 'generated-index',},
       items: [{
