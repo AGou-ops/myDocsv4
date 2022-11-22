@@ -23,6 +23,9 @@ jobs:
       - name: Build website
         run: yarn build
 
+      - name: Add CNAME file
+        run: echo 'docs.agou-ops.cn' > build/CNAME
+
       # 部署到 GitHub Pages 的热门选择：
       # 文档：https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
       - name: Deploy to GitHub Pages
@@ -38,12 +41,12 @@ jobs:
           # 你可以用自己的用户信息替换它们。
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
-      - uses: manyuanrong/setup-ossutil@v2.0
-        with:
-          # endpoint 可以去oss控制台上查看
-          endpoint: "oss-cn-hangzhou.aliyuncs.com"
-          # 使用我们之前配置在secrets里面的accesskeys来配置ossutil
-          access-key-id: ${{ secrets.ACCESS_KEY_ID }}
-          access-key-secret: ${{ secrets.ACCESS_KEY_SECRET }}
-      - name: Deply To OSS
-        run: ossutil cp ./ oss://agou-ops/myDocsv4 -rf
+      # - uses: manyuanrong/setup-ossutil@v2.0
+      #   with:
+      #     # endpoint 可以去oss控制台上查看
+      #     endpoint: "oss-cn-hangzhou.aliyuncs.com"
+      #     # 使用我们之前配置在secrets里面的accesskeys来配置ossutil
+      #     access-key-id: ${{ secrets.ACCESS_KEY_ID }}
+      #     access-key-secret: ${{ secrets.ACCESS_KEY_SECRET }}
+      # - name: Deply To OSS
+      #   run: ossutil cp ./ oss://agou-ops/myDocsv4 -rf
