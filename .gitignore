@@ -22,4 +22,4 @@ yarn-error.log*
 
 .env
 docSearchConfig.json
-docusaurus.config.js
+algolia.sh
