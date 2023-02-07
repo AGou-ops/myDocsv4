@@ -12,6 +12,13 @@ mysql -h <mysql_server_addr> -P <PORT> -u <USER> -p <PASSWORD>
 - TCL（**Transaction Control Language**）：事务控制语句：用于控制事务
 - DQL（**Data Query Language**）：数据查询语言，select， from， where，order by， having，asc|desc
 
+MySQL的几个默认库及作用：
+
+- `information_schema`: 保存了MySQl服务所有数据库元数据信息，具体MySQL服务有多少个数据库，各个数据库有哪些表，各个表中的字段是什么数据类型，各个表中有哪些索引，各个数据库要什么权限才能访问。
+- `sys`: 其所有的数据源均来自`performance_schema`，目标是把该表的复杂性降低。
+- `mysql`: 保存MySQL的权限、参数、对象和状态信息，如哪些user可以访问这个数据、DB参数、插件、主从。(常用的，在mysql.user表中修改root用户的密码)
+- `performance_schema`: 主要用于收集数据库服务器性能参数。
+
 ## 基础
 
 ```sql
