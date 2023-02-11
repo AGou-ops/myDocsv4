@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_docsv_4=self.webpackChunkmy_docsv_4||[]).push([[2755],{61124:a=>{a.exports=JSON.parse('{"title":"Kafka","slug":"/category/kafka","permalink":"/docs/category/kafka","navigation":{"previous":{"title":"kvm_install.sh","permalink":"/docs/LinuxBasics/KVM/kvm_install.sh"},"next":{"title":"CMAK","permalink":"/docs/LinuxBasics/Kafka/CMAK"}}}')}}]);

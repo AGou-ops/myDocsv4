@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_docsv_4=self.webpackChunkmy_docsv_4||[]).push([[8465],{924:e=>{e.exports=JSON.parse('{"title":"\u4e91\u539f\u751f\u76f8\u5173","slug":"/category/\u4e91\u539f\u751f\u76f8\u5173","permalink":"/docs/category/\u4e91\u539f\u751f\u76f8\u5173","navigation":{"next":{"title":"CICD","permalink":"/docs/category/cicd"}}}')}}]);

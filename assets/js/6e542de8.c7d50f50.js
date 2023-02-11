@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_docsv_4=self.webpackChunkmy_docsv_4||[]).push([[8217],{34262:e=>{e.exports=JSON.parse('{"title":"Helm","slug":"/category/helm","permalink":"/docs/category/helm","navigation":{"previous":{"title":"k8s","permalink":"/docs/category/k8s"},"next":{"title":"Helm Basic","permalink":"/docs/CloudNative/k8s/Helm/Helm Basic"}}}')}}]);
