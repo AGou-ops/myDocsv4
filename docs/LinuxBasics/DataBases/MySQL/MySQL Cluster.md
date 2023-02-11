@@ -63,14 +63,13 @@ binlog-ignore-db=mysql   # 不记录日志的数据库
 
 ```sql
 mysql> flush tables with read lock;
-mysql> > show master status\G
+mysql> show master status\G
 *************************** 1. row ***************************
             File: master-bin.000003
         Position: 2007
     Binlog_Do_DB: 
 Binlog_Ignore_DB: 
 1 row in set (0.00 sec)
-
 ```
 
 锁表，为了产生环境中不让进新的数据，好让从服务器定位同步位置，初次同步完成后，记得解锁。

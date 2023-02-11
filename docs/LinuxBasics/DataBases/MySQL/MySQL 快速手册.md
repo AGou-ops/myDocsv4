@@ -80,7 +80,7 @@ ALTER TABLE <TABLE_NAME> <...OPTIONS...>;
 */
 
 DROP TABLE [IF EXISTS] <TABLE_NAME...>;		-- 删除表
-TRUNCATE TABLE <TABLE_NAME>;		-- 清空表数据，不删除表结构
+TRUNCATE TABLE <TABLE_NAME>;		-- 清空表数据，不删除表结构，与DELETE不同的是，该操作无法恢复，DELETE可以通过回滚操作进行恢复
 DELETE FROM <TABLE_NAME>;		-- 清空表数据，不删除表结构
 
 -- 检查表是否有错误
