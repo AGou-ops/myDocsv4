@@ -13,7 +13,7 @@
 
 类似于正向代理（本地转发）
 
-![ssh-tunnel-1](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/ssh%20tunnel/ssh-tunnel-2.png)
+![ssh-tunnel-1](https://cdn.agou-ops.cn/blog-images/ssh%20tunnel/ssh-tunnel-2.png)
 
 在`HostB`主机上，在其本地起一个`8888`端口，使之映射到`HostC`主机的SSH默认`22`端口，如此，在` HostA `上可以使用 `HostB:8888` 就像使用 `HostC:22` 一样。
 
@@ -40,7 +40,7 @@ ssh -L 9906:10.1.0.2:3306 root@10.1.0.2
 
 类似于反向代理（远程转发）
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/ssh%20tunnel/ssh-tunnel-3.png)
+![](https://cdn.agou-ops.cn/blog-images/ssh%20tunnel/ssh-tunnel-3.png)
 
 在 `HostC` 上，让 `HostB `起`8888 `端口，使之映射到 `localhost` 的 `22 `端口。如此，在` HostA `上可以使用 `HostB:8888` 就像使用 `HostC:22 `一样。
 
@@ -49,7 +49,7 @@ ssh -L 9906:10.1.0.2:3306 root@10.1.0.2
 ssh -R 8888:localhost:22 root@172.16.1.129
 ```
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/ssh%20tunnel/ssh-tunnel-4.png)
+![](https://cdn.agou-ops.cn/blog-images/ssh%20tunnel/ssh-tunnel-4.png)
 
 在 `HostC 上`，让 `HostB `起 `8888 `端口，使之映射到` HostD` 的 `22 `端口。如此，在 `HostA `上可以使用 `HostB:8888 `就像使用 `HostD:22` 一样。
 

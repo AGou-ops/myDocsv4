@@ -55,7 +55,7 @@ Setting policy "mirror_queue" for pattern "^queue_" to "{"ha-mode":"all","ha-syn
 
 在 web 管理接口中创建队列，名称前缀为`queue`：
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/rabbitmq/rabbitmq_mirror_queue.png)
+![](https://cdn.agou-ops.cn/blog-images/rabbitmq/rabbitmq_mirror_queue.png)
 
 在图中看到`Node-->rabbitmq@master`后面有个`+2`字样，就表示已经同步到`node01`和`node02`节点，将鼠标移动至此可以看到提示信息：`Synchronised mirrors: rabbit@node02,rabbit@node01`。
 
@@ -68,7 +68,7 @@ systemctl stop rabbitmq-server
 
 此时，打开 web 管理接口，可以看到 `node02`已经成为主节点，并完成同步：
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/rabbitmq/rabbitmq_mirror_queue-2.png)
+![](https://cdn.agou-ops.cn/blog-images/rabbitmq/rabbitmq_mirror_queue-2.png)
 
 ## 其他
 

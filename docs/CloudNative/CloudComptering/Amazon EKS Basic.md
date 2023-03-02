@@ -6,13 +6,13 @@
 
 ### 为用户生成可供使用的安全证书
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/aws%20iam-2.png)
+![](https://cdn.agou-ops.cn/others/aws%20iam-2.png)
 
 ## 添加`IAM`用户授权
 
 可给予管理员权限(如下图所示):
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/aws%20iam.png)
+![](https://cdn.agou-ops.cn/others/aws%20iam.png)
 
 其他`IAM`管理参考官方指南: https://docs.aws.amazon.com/zh_cn/IAM/latest/UserGuide/introduction.html
 
@@ -85,9 +85,9 @@ C:\Users\Administrator>eksctl create cluster --name test-cluster --version 1.17 
 
 等待`Ready`之后, 分别登录`Amazon EKS`控制台和`aws`的`ec2`控制台, 可以发现创建好的实例:
 
-![Amazon EKS](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/amazon%20EKS.png)
+![Amazon EKS](https://cdn.agou-ops.cn/others/amazon%20EKS.png)
 
-![EC2 dashboard](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20200913163437.png)
+![EC2 dashboard](https://cdn.agou-ops.cn/others/20200913163437.png)
 
 ### 使用`kubectl`查看集群状态
 

@@ -182,7 +182,7 @@ docker run -d --name prometheus -p 9090:9090 -v /home/prom/prometheus.yml:/etc/p
 
 查看报警规则`rules`：
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/prometheus%20%2B%20alertmanager/alertmanager-1.png)
+![](https://cdn.agou-ops.cn/blog-images/prometheus%20%2B%20alertmanager/alertmanager-1.png)
 
 这里说明一下 Prometheus Alert 告警状态有三种状态：`Inactive`、`Pending`、`Firing`
 
@@ -198,15 +198,15 @@ docker stop node-exporter
 
 在 Prom web面板中查看：
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/prometheus%20%2B%20alertmanager/alertmanager-2.png)
+![](https://cdn.agou-ops.cn/blog-images/prometheus%20%2B%20alertmanager/alertmanager-2.png)
 
 在`alertmanager`web面板中查看：
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/prometheus%20%2B%20alertmanager/alertmanager-3.png)
+![](https://cdn.agou-ops.cn/blog-images/prometheus%20%2B%20alertmanager/alertmanager-3.png)
 
 已成功收到报警邮件：
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/prometheus%20%2B%20alertmanager/alertmanager-4.png)
+![](https://cdn.agou-ops.cn/blog-images/prometheus%20%2B%20alertmanager/alertmanager-4.png)
 
 ## 参考链接
 

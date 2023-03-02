@@ -120,7 +120,7 @@ systemctl enable zabbix-server zabbix-agent httpd
 
 最后，浏览器打开`http://YOUR_IP_ADDR/zabbix/setup.php`即可.
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Zabbix/zabbix-1.png)
+![](https://cdn.agou-ops.cn/blog-images/Zabbix/zabbix-1.png)
 
 完成之后，系统会自动生成`/etc/zabbix/web/zabbix.conf.php`配置文件，此后如要修改相关信息，修改该文件即可.
 
@@ -128,7 +128,7 @@ systemctl enable zabbix-server zabbix-agent httpd
 
 登录成功界面
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Zabbix/zabbix-2.png)
+![](https://cdn.agou-ops.cn/blog-images/Zabbix/zabbix-2.png)
 
 ## 添加 Zabbix-agent
 

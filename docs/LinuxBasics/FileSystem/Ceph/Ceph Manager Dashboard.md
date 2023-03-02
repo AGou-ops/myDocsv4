@@ -59,7 +59,7 @@ ceph dashboard ac-user-create suofeiya suofeiya administrator
 
 最后打开浏览器访问对应地址 https://172.16.1.128:8443 ，需注意**协议为 HTTPS**
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/ceph-dashboard/ceph-dashboard-1.png "ceph-dashboard")
+![](https://cdn.agou-ops.cn/blog-images/ceph-dashboard/ceph-dashboard-1.png "ceph-dashboard")
 
 ## 其他
 

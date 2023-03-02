@@ -132,7 +132,7 @@ systemctl start tomcat9
 
 最后打开浏览器输入：http://172.16.1.128:8080/ 即可。
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/tomcat/tomcat-1.png)
+![](https://cdn.agou-ops.cn/blog-images/tomcat/tomcat-1.png)
 
 ### 开启 `server status`，`Manager App`和`Host Manager`
 
@@ -163,7 +163,7 @@ systemctl start tomcat9
 
 ## Tomcat 目录结构
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/tomcat/tomcat-2.png)
+![](https://cdn.agou-ops.cn/blog-images/tomcat/tomcat-2.png)
 
 * `bin`：该目录下存放的是二进制可执行文件，例如启动和关闭 tomcat 的脚本文件`startup.sh`和`shutdown.sh`，修改`catalina`可以设置tomcat的内存
 

@@ -67,11 +67,11 @@ telegraf --sample-config > telegraf.conf		# 同目录下也有个sample文件，
 
 需要略微修改的地方：
 
-![image-20220422144857745](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20220422144857745.png)
+![image-20220422144857745](https://cdn.agou-ops.cn/others/image-20220422144857745.png)
 
 将`122`行和`129`行取消注释，具体以当前文件为准。
 
-![image-20220422150746282](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20220422150746282.png)
+![image-20220422150746282](https://cdn.agou-ops.cn/others/image-20220422150746282.png)
 
 大概`5761`行和`5763`行，取消注释[[inputs.nginx]]，注意，这里的`urls`填写的是你nginx的`nginx-status`页面，
 
@@ -133,11 +133,11 @@ time                accepts active handled host      port reading requests serve
 
 添加`influxDB`数据源很简单，填好`URL`和`Database`为`telegraf`就可以了，这里我就不再赘述.
 
-![image-20220422151431964](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20220422151431964.png)
+![image-20220422151431964](https://cdn.agou-ops.cn/others/image-20220422151431964.png)
 
 其他高级操作自行摸索。。。：
 
-![image-20220422151521757](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20220422151521757.png)
+![image-20220422151521757](https://cdn.agou-ops.cn/others/image-20220422151521757.png)
 
 ## 附录：influxdb 基本操作
 

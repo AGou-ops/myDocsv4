@@ -214,7 +214,7 @@ systemctl start grafana-server
 
 `选择左侧菜单栏 + 号` --> `import`  --> `填入id或者json格式数据`
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/promethues%20%2B%20grafana/grafana.png)
+![](https://cdn.agou-ops.cn/blog-images/promethues%20%2B%20grafana/grafana.png)
 
 :information_source:模板来自：https://grafana.com/grafana/dashboards/8919
 

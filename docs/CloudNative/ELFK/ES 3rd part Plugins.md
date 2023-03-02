@@ -21,7 +21,7 @@ docker run -p 9100:9100 mobz/elasticsearch-head:5
 
 从`chrome商店`下载对应的插件，地址： https://chrome.google.com/webstore/detail/elasticsearch-head/ffmkiejjmecolpfloofpjologoblkegm?utm_source=chrome-ntp-icon
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/elasticsearch/elasticsearch-head.png "截图")
+![](https://cdn.agou-ops.cn/blog-images/elasticsearch/elasticsearch-head.png "截图")
 
 ### 作为插件使用
 
@@ -54,7 +54,7 @@ systemctl start cerebro
 
 `cerebro`默认监听端口为`9000`，直接打开浏览器访问，http://172.16.1.128:9000
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/elasticsearch/elasticsearch-cerebro.png "截图")
+![](https://cdn.agou-ops.cn/blog-images/elasticsearch/elasticsearch-cerebro.png "截图")
 
 ## 参考资料
 

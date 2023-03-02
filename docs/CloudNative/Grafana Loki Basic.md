@@ -39,13 +39,13 @@ docker-compose -f docker-compose.yaml up
 
 1. 打开`Grafana UI`并登录, 依次点击
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/loki/add%20loki%20data%20source-1.png)
+![](https://cdn.agou-ops.cn/blog-images/loki/add%20loki%20data%20source-1.png)
 
 2. 在列表中找到`Loki`并点击
 3. 添加URL为`http://127.0.0.1:3100`(如果使用的是`docker-compose`部署, 则需要填写的URL为`http://loki:3100`), 然后点击`Save & Test`即可
 4. 点击左侧列表中的`Explore`, 选择一个数据流
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/loki/add%20loki%20data%20source-2.png)
+![](https://cdn.agou-ops.cn/blog-images/loki/add%20loki%20data%20source-2.png)
 
 ### install Loki with Helm
 

@@ -28,7 +28,7 @@ Jenkins部署在k8s环境之后，通过建立RBAC授权机制，可以实现Jen
 >
 > 5）Jenkins调用k8s将镜像部署在k8s环境
 
-![img](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/fcebc6a2b3f3211c4481fe783597dce6.png)
+![img](https://cdn.agou-ops.cn/others/fcebc6a2b3f3211c4481fe783597dce6.png)
 
 ## 2.将Jenkins部署在k8s集群
 
@@ -224,41 +224,41 @@ jenkins-data-jenkins-master-0   Bound    pvc-3f49831b-7faa-456e-9a2f-65b6085933d
 >
 > 访问看到如下页面说明Jenkins还在启动中，当日志输出到下图样子时，刷新Jenkins即可进入系统，复制日志中password解锁Jenkins
 >
-> ![请添加图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/5072a83139484c61860f966035834408.png)
+> ![请添加图片描述](https://cdn.agou-ops.cn/others/5072a83139484c61860f966035834408.png)
 
 **1）解锁Jenkins**
 
 可以在日志中复制password，也可以查看/var/jenkins_home/secrets/initialAdminPassword这个文件
 
-![请添加图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/fd63e40a9e9f4cc8b62736a8f95e13fd.png)
+![请添加图片描述](https://cdn.agou-ops.cn/others/fd63e40a9e9f4cc8b62736a8f95e13fd.png)
 
 **2）选择插件来安装**
 
 把所有的插件都勾选上，避免后期出现软件依赖
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/a5dc04c56dc34f3098980e8a45329ad3.png)
+![](https://cdn.agou-ops.cn/others/a5dc04c56dc34f3098980e8a45329ad3.png)
 
 点击全部即可全部勾选
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20a43cdcdaf04446a9e34d3910cf3720.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20a43cdcdaf04446a9e34d3910cf3720.png)
 
 **3）等待插件安装完**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/a192f76b08cf490d924b8c07e2fca199.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/a192f76b08cf490d924b8c07e2fca199.png)
 
 **4）创建Jenkins账号**
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/6da90fc978394f78a6973653aa2d9b40.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/6da90fc978394f78a6973653aa2d9b40.png)
 
 **5）设置实例地址**
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/b7698c5a282d4fd7805a01ea7e0d7785.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/b7698c5a282d4fd7805a01ea7e0d7785.png)
 
 **6）重启Jenkins**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/0147db61d00345bb9bb5c89f20fb3f91.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/0147db61d00345bb9bb5c89f20fb3f91.png)
 
 ### 2.9.登陆Jenkins
 
 账号admin密码admin
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/ad1325a8e3a347d3bc795029cb401a12.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/ad1325a8e3a347d3bc795029cb401a12.png)
 
 ## 3.使用docker部署gitlab
 
@@ -275,16 +275,16 @@ CONTAINER ID        IMAGE                           COMMAND                  CRE
 ```
 
 当出现以下页面表示gitlab启动完成
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/8aecebfb08ed4dce8db08a824c33bdb1.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/8aecebfb08ed4dce8db08a824c33bdb1.png)
 
 ### 3.2.访问gitlab
 
 访问http://192.168.16.105:8080/
 
 第一次登陆需要设置root密码
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/31be9f25fca64dd699b78ef9bbeaf6c4.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/31be9f25fca64dd699b78ef9bbeaf6c4.png)
 设置完密码即可登陆系统
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/cb47d2b998d940dd897ce6c253a29f20.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/cb47d2b998d940dd897ce6c253a29f20.png)
 
 ## 4.将gitlab部署在k8s集群
 
@@ -548,40 +548,40 @@ statefulset.apps/gitlab replaced
 
 > gitlab启动缓慢，进入容器查看gitlab状态，都是run后即可访问
 >
-> ![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/3cb3db85c0a44853bb427cc3f739f8ef.png)
+> ![在这里插入图片描述](https://cdn.agou-ops.cn/others/3cb3db85c0a44853bb427cc3f739f8ef.png)
 
 **1）设置用户密码**
 
 最少8位，这里设置admin123
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/f272c0ffc079443199a81e55f95fba69.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/f272c0ffc079443199a81e55f95fba69.png)
 
 **2）进入gitlab**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/207da6d0e57b43008394ab964311a6f2.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/207da6d0e57b43008394ab964311a6f2.png)
 
 **3）设置语言为中文**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/b1c0dfdc00c24d8588f29c1ef4664fae.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/b1c0dfdc00c24d8588f29c1ef4664fae.png)
 
 ## 5.提交程序代码到gitlab上
 
 ### 5.1.新建一个项目
 
 **1）点击新建项目**
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/77ce6e59d41d4ec1b016f50bd766ef68.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/77ce6e59d41d4ec1b016f50bd766ef68.png)
 
 **2）创建空白项目**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/bf036a4f46f84a9e94d1d137ee7d310f.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/bf036a4f46f84a9e94d1d137ee7d310f.png)
 
 **3）填写项目信息**
 
 可见级别设置为公开
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/101cb12d291e489abf69647313fecc9d.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/101cb12d291e489abf69647313fecc9d.png)
 
 **4）创建完成**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/c1de124f7b624b2b95efcf335767eecb.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/c1de124f7b624b2b95efcf335767eecb.png)
 
 ### 5.2.将程序代码提交到gitlab
 
@@ -604,7 +604,7 @@ To http://192.168.16.106:30080/root/blog_project.git
 分支 master 设置为跟踪来自 origin 的远程分支 master。
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/d4306e08735645e5ae24a93123b7a064.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/d4306e08735645e5ae24a93123b7a064.png)
 
 ## 6.Jenkins集成gitlab
 
@@ -626,16 +626,16 @@ statefulset.apps/jenkins-master replaced
 ```
 
 系统管理—>插件管理—>可选插件—>搜索gitlab—>安装
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/07defd42b2a5485ba30659d6d4d775af.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/07defd42b2a5485ba30659d6d4d775af.png)
 
 ### 6.2.在gitlab上生成token
 
 edit profile—>>访问令牌—>>填写token名称—>>勾选权限范围
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/63547133425548b5a3e5e3a902cf90b3.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/63547133425548b5a3e5e3a902cf90b3.png)
 
 token只显示一次，妥善保管：F4N8_LrfC7BdNWXXyJA2
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/41554f761e5742c9af47c519ceedaf51.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/41554f761e5742c9af47c519ceedaf51.png)
 
 ### 6.3.在Jenkins添加gitlab api token
 
@@ -645,15 +645,15 @@ Connection name：gitlab-token
 
 Gitlab host URL：http://192.168.16.104:30080/
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/04b27f6631e648c0a81627335fdab789.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/04b27f6631e648c0a81627335fdab789.png)
 
 填写完基本信息后点击添加gitlab token，类型只能选择gitlab api token，将token粘进去即可
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/3a3cf1606a7b45c6b02a3132aab80ac0.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/3a3cf1606a7b45c6b02a3132aab80ac0.png)
 
 添加完token之后，下拉选择刚刚添加的token，不再变红说明连接gitlab成功
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/6af8522a35b843e7a3da53e2a3179bd4.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/6af8522a35b843e7a3da53e2a3179bd4.png)
 
 ## 7.Jenkins分布式master-slave模式
 
@@ -664,7 +664,7 @@ slave节点有很多方式部署，我们采用
 ### 7.1.新增Jenkins节点
 
 **1）系统管理—>节点管理—>新建节点—>填写节点名称—>固定节点—>确定**
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/95f634c391aa41359aba7c928eb3e693.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/95f634c391aa41359aba7c928eb3e693.png)
 
 **2）添加节点详细信息**
 
@@ -681,14 +681,14 @@ slave节点有很多方式部署，我们采用
 启动方式：通过java web启动代理
 
 自定义工作目录：/data/jenkins_jobs
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/24e8095eed63443f90c3b86db984ec93.jpg)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/24e8095eed63443f90c3b86db984ec93.jpg)
 
 **3）添加完节点发现节点是红的，这说明代理程序还没有启动，Jenkins不知道节点是谁**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/3dccdb73b2834db791fb00270d95d0e5.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/3dccdb73b2834db791fb00270d95d0e5.png)
 
 点击节点，进去后会看到如何启动agent，右键复制agent.jar拿到链接地址，去对应的服务器上下载jar包，然后启动即可成功添加节点
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/747440af22584bf5867db7b32b7fa9dc.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/747440af22584bf5867db7b32b7fa9dc.png)
 
 ```sh
 1.创建节点工作目录
@@ -710,30 +710,30 @@ slave节点有很多方式部署，我们采用
 ```
 
 agent启动后在Jenkins页面上观察节点，发现已经是可用状态
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/5199668c5f564bb78b30223cc63d465d.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/5199668c5f564bb78b30223cc63d465d.png)
 
 ### 7.2.新建一个任务运行在slave1节点上
 
 **1）配置任务—>general—>限制项目的运行节点—>填写节点设置的标签即可**
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/385087446afa435da77418de3cebfdf5.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/385087446afa435da77418de3cebfdf5.png)
 
 **2）运行任务观察运行在哪个节点**
 
 选择master分支，开始构建
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/11026daa09754df8892cc7c42d434b32.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/11026daa09754df8892cc7c42d434b32.png)
 
 任务已经运行到了Jenkins-slave1-107节点上
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/f4003605156e44fc994c7a9da3f63b69.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/f4003605156e44fc994c7a9da3f63b69.png)
 
 钉钉已经收到信息并且在节点工作目录已经产生数据
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/2b0b214b6069439c837821a44b043a74.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/2b0b214b6069439c837821a44b043a74.png)
 
 ### 7.3.观察节点关联的执行任务
 
 > 到这一步CI/CD平台已经部署完成，我们可以新建一个流程，更新程序到kubernetes平台
-> ![](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/37216cf5a5824c899d172e8f4137e2c0.png)
+> ![](https://cdn.agou-ops.cn/others/37216cf5a5824c899d172e8f4137e2c0.png)
 
 ## 8.使用pipeline流水线将know-system项目更新到kubernetes环境
 
@@ -841,7 +841,7 @@ service/nginx-service configured
 
 **3）查看项目首页**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/5c579af45d324e1c857e235d62ca72f1.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/5c579af45d324e1c857e235d62ca72f1.png)
 
 ### 8.3.将k8s资源文件提交至gitlab
 
@@ -945,28 +945,28 @@ EXPOSE 80
 
 ### 8.5.将pipeline粘贴到流水线任务中
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/6b567d43deb0474e8b57f717070c1e95.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/6b567d43deb0474e8b57f717070c1e95.png)
 
 ### 8.6.构建master分支完成项目更新
 
 **1）选择更新信息**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/cebe0301954b46e0a696ebe6e2d05e93.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/cebe0301954b46e0a696ebe6e2d05e93.png)
 
 **2）运维确认信息**
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/e14279c1a0824528a12931943441b2ab.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/e14279c1a0824528a12931943441b2ab.png)
 
 **3）pipeline任务更新成功**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/b322ccd2bf6e48f5a5609660bc537d55.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/b322ccd2bf6e48f5a5609660bc537d55.png)
 
 **4）在blue ocean查看此次更新的镜像版本**
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/0e471501cd6c4617b630b6bebb53f41c.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/0e471501cd6c4617b630b6bebb53f41c.png)
 
 **5）在rancher上观察项目是否更新成最新的镜像版本**
 
 更新流程顺利完成！
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/b261c18ee6c646a2848342ae64dda144.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/b261c18ee6c646a2848342ae64dda144.png)
 
 > 该文章为转载内容，仅做备份私人学习使用，原文：https://jiangxl.blog.csdn.net/article/details/119828244
 

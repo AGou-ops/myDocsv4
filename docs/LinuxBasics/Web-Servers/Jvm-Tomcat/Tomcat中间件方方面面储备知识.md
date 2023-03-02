@@ -27,7 +27,7 @@ JAVA：LNMT（T表示Tomcat容器，放java代码的）
 异步类似于有一张表，根据对应的信息找对应的页面
 
 同步类似于在一个目录中，在每一个文件中找想要的信息
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20200502220826692.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20200502220826692.png)
 
 ## 2.Tomcat必备知识
 
@@ -220,7 +220,7 @@ drwxr-x---. 3 root root    22 3月  31 14:31 work
 ## 5.配置Tomcat管理功能
 
 启动完tomcat点下图框中默认会报错，因为没有账号密码，尝试多次后会报401
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20200502220909683.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20200502220909683.png)
 
 我们需要修改conf/tomcat-users.xml文件即可，下载在登录时输入username当时配置的即可正常登录
 
@@ -242,7 +242,7 @@ drwxr-x---. 3 root root    22 3月  31 14:31 work
 
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20200502220946745.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20200502220946745.png)
 
 tomcat8.5以后的版本默认只允许机访问，换需要修改webapps/manager/META-INF/context.xml
 
@@ -259,7 +259,7 @@ tomcat8.5以后的版本默认只允许机访问，换需要修改webapps/manage
 
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/2020050222102775.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/2020050222102775.png)
 
 ## 6.部署jpress
 
@@ -325,7 +325,7 @@ Query OK, 0 rows affected (0.00 sec)
 
 - https://gitee.com/GalaIO/jpress/blob/master/wars/jpress-web-newest.war
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20200502221054840.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20200502221054840.png)
 
 ```sh
 [root@localhost webapps]\# cp jpress/jpress/wars/jpress-web-newest.war  .
@@ -340,26 +340,26 @@ docs  examples  host-manager  jpress  jpress.war  jpress-web-newest  manager  RO
 
 - 下面访问http://192.168.81.210:8080/jpress
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20200502221126344.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20200502221126344.png)
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20200502221151818.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20200502221151818.png)
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20200502221209322.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20200502221209322.png)
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20200502221247953.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20200502221247953.png)
 
 - 我们去重启一下tomcat
 - jpress的配置文件位于webapps/jpress/WEB-INF/classes， db.properties
 - 安装完成默认是进入整体的首页，我们可以使用单独账号进行登录
 - 然后去访问http://192.168.81.210:8080/jpress/admin
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20200502221414412.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20200502221414412.png)
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20200502221516725.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20200502221516725.png)
 
 - 可以写一篇文章并上传图片
 
-    ![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20200502221538238.png)
+    ![在这里插入图片描述](https://cdn.agou-ops.cn/others/20200502221538238.png)
 
 - 在jpress/attachment/20200331/目录可以看到用户上传的附件
 
@@ -437,7 +437,7 @@ out.println("Available memory can be used is :"+(mm+fm-tm)+"MB"+"<br>");
 ```
 
 - 访问http://192.168.81.210:8080/mem.jsp
-    ![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/202005022216493.png)
+    ![在这里插入图片描述](https://cdn.agou-ops.cn/others/202005022216493.png)
 
 ## 8.Tomcat主配置文件
 
@@ -544,7 +544,7 @@ apache-tomcat-8.5.53  apache-tomcat-8.5.53.tar.gz  jdk-8u60-linux-x64.tar.gz
 
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20200502221730623.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20200502221730623.png)
 
 ```sh
 #书写tomcat相关脚本时（启动 重启 监控）都有精确过滤

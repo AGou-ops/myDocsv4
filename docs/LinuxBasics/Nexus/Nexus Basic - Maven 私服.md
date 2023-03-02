@@ -18,7 +18,7 @@ nexus提供了强大的仓库管理功能,构件搜索功能,它基于REST,友�
 
 私服仓库的工作流程:
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Maven/Nexus-1.jpg)
+![](https://cdn.agou-ops.cn/blog-images/Maven/Nexus-1.jpg)
 
 Nexus Repository Manager, 仓库管理器, 可以用来搭建`apt`,`docker`,`maven2`,`npm`,`nuget`,`pypi`,`yum`私服.
 
@@ -49,7 +49,7 @@ Nexus Repository Manager, 仓库管理器, 可以用来搭建`apt`,`docker`,`mav
 | maven-snapshots | 私库快照（调试版本）jar                                      |
 | maven-public    | 仓库分组，把上面三个仓库组合在一起对外提供服务，在本地maven基础配置settings.xml中使用 |
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Maven/Nexus-3.png "**Repositories**")
+![](https://cdn.agou-ops.cn/blog-images/Maven/Nexus-3.png "**Repositories**")
 
 ## Linux 上安装
 
@@ -63,21 +63,21 @@ The `nexus` script can be used to manage the repository manager as a background 
 
 最后通过 http://ip:8081 即可访问, 默认账号密码分别是 `admin/admin123`
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Maven/Nexus-2.png "截图")
+![](https://cdn.agou-ops.cn/blog-images/Maven/Nexus-2.png "截图")
 
 ### 创建仓库(阿里的中央仓库)
 
 proxy代理仓库
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Maven/Nexus-4.png)
+![](https://cdn.agou-ops.cn/blog-images/Maven/Nexus-4.png)
 
 hosted宿主仓库
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Maven/Nexus-6.png)
+![](https://cdn.agou-ops.cn/blog-images/Maven/Nexus-6.png)
 
 group仓库组
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Maven/Nexus-5.png)
+![](https://cdn.agou-ops.cn/blog-images/Maven/Nexus-5.png)
 
 ## Docker 中运行
 

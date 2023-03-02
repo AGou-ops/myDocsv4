@@ -54,7 +54,7 @@
 >
 > 微服务：程序包有多个，每个程序包都是不同的功能结合，且每个微服务程序都有自己的单独数据库存储数据，所有的微服务信息都会存储到注册中心，网关程序在最前面，当用户有请求进来后，首先发送给网关服务，然后网关根据注册中心的数据，将不同功能的请求转发给不同的微服务程序
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/caf1d3f6f0f4405ea879f6408a54faf5.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/caf1d3f6f0f4405ea879f6408a54faf5.png)
 
 ### 1.2.微服务组件架构图
 
@@ -73,7 +73,7 @@
 注册中心与微服务之间的联系：发现微服务—>微服务注册到注册中心—>进行心跳监测，异常的节点会踢出
 
 微服务程序的门户网站会配置Gateway网关服务的地址，由门户网站用户请求的微服务信息，转发给Gateway网关程序，所有的微服务都会注册在Eureka注册中心中，Gateway网关会将请求通过注册中心转发给对应的微服务程序。
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/0225cafb98dd43d98ddd102cf1203791.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/0225cafb98dd43d98ddd102cf1203791.png)
 
 ### 1.3.微服务注册中心
 
@@ -110,7 +110,7 @@
 
 ### 2.1.项目迁移到K8S平台流程
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/47633ea793f24a4b8727059870501e50.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/47633ea793f24a4b8727059870501e50.png)
 项目迁移到K8S平台大致流程分为以下几个阶段：
 
 - 制作程序镜像
@@ -125,7 +125,7 @@
     - 可以使用单独的nginx容器去反向代理Cordns解析的services名称将Pod应用对外发布
     - 也可以使用ingress+services的方式将应用程序对外发布，使用ingress的前提是必须可以通过域名访问应用
     - 架构图如下
-        ![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/4450dd7d3c994bb78ca36b43af66e28a.png)
+        ![在这里插入图片描述](https://cdn.agou-ops.cn/others/4450dd7d3c994bb78ca36b43af66e28a.png)
 - 后期的日志收集与监控
     - 当应用在K8s程序运行后，对于程序的日志比如nginx、tomcat这些日志文件都不会做持久化，因此就需要考虑对日志进行收集，可以采用Filebeat+ELK方式对程序日志进行收集
     - 使用Prometheus+Grafana对整个K8s平台进行全方面监控
@@ -138,13 +138,13 @@
 >
 > 传统架构运维环境一般由zabbix监控系统进行监控，日志采集会使用ELK平台。
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/e34c94fc97e0416cb21cd00879244103.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/e34c94fc97e0416cb21cd00879244103.png)
 
 > **Kubernetes平台部署项目方式：**
 >
 > 首先由开发人员提交代码到Gitlab代码仓库，Jenkins触发更新从Gitlab上获取最新代码，通过写好流水线将程序打包成Docker镜像并推送至Harbor仓库，再由Jenkins调用K8s的Master Api将程序的镜像采用Deployment控制器部署到K8s集群，再由service资源暴露pod资源，最后由ingress或者nginx资源将程序发布到互联网。
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/3ca0d364bdc24690a04d4ca95eb1cb05.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/3ca0d364bdc24690a04d4ca95eb1cb05.png)
 
 ## 3.微服务程序前期环境准备（配置、编译、制作镜像）
 
@@ -166,7 +166,7 @@ simple-microservice微服务的各个程序：
 用户请求首先到Protal前端页面，也就是程序的首页，在首页的各项功能操作都会由Gateway网关服务转发到各自的微服务程序上，比如请求一个订单服务，订单服务会事先注册到Eureka中，由Gateway将请求发送给Eureka，再由Eureka转发给具体的微服务程序，这些微服务程序都有自己单独的数据库服务。
 
 微服务程序的门户网站会配置Gateway网关服务的地址，由门户网站用户请求的微服务信息，转发给Gateway网关程序，所有的微服务都会注册在Eureka注册中心中，Gateway网关会将请求通过注册中心转发给对应的微服务程序。
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/b89c6c882bbe4a2d9ab53f97d5fe1f35.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/b89c6c882bbe4a2d9ab53f97d5fe1f35.png)
 
 该微服务程序代码可以托管在gitlab代码仓库中，我们可以建立多个分支模拟从开发到上线的流程，理念：分别创建5个分支，在每个分支中增加对应的代码，最后合并到master分支，也可以直接就在master分支上新增配置文件，我是直接拉取dev1分支，只有程序代码的分支，然后新增一系列配置，最后上线。
 
@@ -181,7 +181,7 @@ simple-microservice微服务的各个程序：
 - dev5：新功能代码更新上线
 - master：上线版本
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/258d6fe2cd114cd58843209bdf1f85de.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/258d6fe2cd114cd58843209bdf1f85de.png)
 
 ### 3.2.simple微服务部署到K8S逻辑架构
 
@@ -201,7 +201,7 @@ simple-microservice微服务的各个程序：
 >
 > 服务发布到互联网采用Nginx而不采用Ingress，Nginx可以配置更多的参数，将Nginx容器运行在每一个Node主机上，映射Node主机的80/443端口，通过在hosts文件里绑定node主机ip+程序域名的方式访问微服务。
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/60f3e04a6fb3410cbdc1f54eee6a7c4e.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/60f3e04a6fb3410cbdc1f54eee6a7c4e.png)
 
 ### 3.3.准备微服务各程序的配置文件
 
@@ -598,7 +598,7 @@ Protal是我们电商平台的门户网站，也就是前端首页，在Protal�
 portal-service/src/main/resources/static/js/orderList.js
 
 portal-service/src/main/resources/static/js/productList.js
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/d0e207db0cb54e6296ca185728e5ed1c.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/d0e207db0cb54e6296ca185728e5ed1c.png)
 
 ```sh
 打开这四个文件，将里面的gateway.ctnrs.com域名修改为gateway.jiangxl.com域名
@@ -936,7 +936,7 @@ eureka   <none>   eureka.jiangxl.com   10.0.0.107   80      13h
 
 首先在本地hosts文件中绑定eureka域名解析，然后在浏览器中输入eureka.jiangxl.com访问eureka服务。
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/dac8c49c10904c4591acb933a094c0d7.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/dac8c49c10904c4591acb933a094c0d7.png)
 
 ### 4.3.配置各个微服务程序连接Eureka集群的地址
 
@@ -1287,7 +1287,7 @@ spec:
 执行完脚本，order程序的docker镜像已经制作好并且推送到了harbor仓库，已经使用sed命令将镜像的名称在yaml中替换成了最新的镜像，部署到了K8S集群
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/be81d4ca75f14ea1afd933b7e4f34ea5.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/be81d4ca75f14ea1afd933b7e4f34ea5.png)
 
 **2.查看程序资源的状态**
 
@@ -1368,7 +1368,7 @@ spec:
 [root@binary-k8s-master1 k8s]\# sh deploy_k8s.sh product-service
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/72e772fd74a1497188734a6e1fd3d28e.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/72e772fd74a1497188734a6e1fd3d28e.png)
 
 **2.查看程序资源的状态**
 
@@ -1449,7 +1449,7 @@ spec:
 [root@binary-k8s-master1 k8s]\# sh deploy_k8s.sh stock-service
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/34720b14a59e4d8e97e5d887beff8a9d.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/34720b14a59e4d8e97e5d887beff8a9d.png)
 
 **2.查看程序资源的状态**
 
@@ -1562,7 +1562,7 @@ spec:
 [root@binary-k8s-master1 k8s]\# sh deploy_k8s.sh portal-service
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/c452fabffdb24a97b0ec5dbfc8dbe6b5.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/c452fabffdb24a97b0ec5dbfc8dbe6b5.png)
 
 **2.查看程序资源的状态**
 
@@ -1615,17 +1615,17 @@ portal    <none>   portal.jiangxl.com    10.0.0.107   80      3m16s
 
 每个微服务程序均在Eureka注册中心中注册完成。
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/feae01f050a440ed92aa5f948efd875f.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/feae01f050a440ed92aa5f948efd875f.png)
 
 ### 4.10.使用simple微服务电商平台
 
 到4.8步骤之后，我们的simple微服务电商平台已经全部部署在K8S集群了，可以在本机hosts里绑定simple微服务的域名，操作电商平台。
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/11d0320836a54e1b96d6e6801bdb9f8b.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/11d0320836a54e1b96d6e6801bdb9f8b.png)
 
 这个微服务平台的背景图其实是京东的一张图而已，是不可以点的。
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/5de80a8717554409af8d9a14b6462e30.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/5de80a8717554409af8d9a14b6462e30.png)
 
 只能在商品服务中查询能购买的商品，然后进行购买，最后在订单服务中查询。
 
@@ -1633,11 +1633,11 @@ portal    <none>   portal.jiangxl.com    10.0.0.107   80      3m16s
 
 点击查询商品服务，我们来下单一个美女观察一下效果，下单后会提示下单成功。
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/2776324a762543f5a9df8fc3fc0f6e19.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/2776324a762543f5a9df8fc3fc0f6e19.png)
 
 点击查询订单服务就可以看到我吗下的订单了
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/91eee91044a3497986b5f0f788a95738.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/91eee91044a3497986b5f0f788a95738.png)
 
 ## 5.基于K8S集群的微服务的扩容与升级
 
@@ -1693,11 +1693,11 @@ stock-6cf98bb445-l8gxb     1/1     Running   0          136m
 
 将平台的这些文件修改成jiangxl.com的内容完成一次portal前端首页的升级
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/6fff8cf3680744d9bd8f4340015acf60.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/6fff8cf3680744d9bd8f4340015acf60.png)
 
 首先找到记录这些文字的文件
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/c8b660cdf01f4e92aed03aa0005f48a4.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/c8b660cdf01f4e92aed03aa0005f48a4.png)
 
 ```sh
 # vim templates/index.ftl
@@ -1732,4 +1732,4 @@ stock-6cf98bb445-l8gxb     1/1     Running   0          136m
 
 程序更新完成后刷新页面就可以看到我们更新的页面内容
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBASmlhbmd4bH4=,size_20,color_FFFFFF,t_70,g_se,x_16.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBASmlhbmd4bH4=,size_20,color_FFFFFF,t_70,g_se,x_16.png)

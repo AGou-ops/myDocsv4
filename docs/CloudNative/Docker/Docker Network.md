@@ -119,7 +119,7 @@ f5a426943455        host                host                local
 - 桥接式容器
     
 
-![图片](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/640.jpeg)
+![图片](https://cdn.agou-ops.cn/others/640.jpeg)
     
 默认的容器类型，故可以省去network的参数。创建网络设备时，一半在容器内部，一半在宿主机的docker0上。实现如下：
 

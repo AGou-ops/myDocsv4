@@ -4,7 +4,7 @@
 
 RabbitMQ 架构图：
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/rabbitmq/rabbitMQ-arch.jpg "Rabbitmq Arch")
+![](https://cdn.agou-ops.cn/blog-images/rabbitmq/rabbitMQ-arch.jpg "Rabbitmq Arch")
 
 * `Broker`:它提供一种传输服务,它的角色就是维护一条从生产者到消费者的路线，保证数据能按照指定的方式进行传输, 
 * `Exchange`:消息交换机,它指定消息按什么规则,路由到哪个队列。 
@@ -208,11 +208,11 @@ rabbitmqctl start_app
 
 最后打开浏览器访问：http://YOUR_IP:15672 即可。
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/rabbitmq/rabbitmq.png)
+![](https://cdn.agou-ops.cn/blog-images/rabbitmq/rabbitmq.png)
 
 rabbitmq 集群：
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/rabbitmq/rabbitmq-cluster.png "rabbitmq 集群")
+![](https://cdn.agou-ops.cn/blog-images/rabbitmq/rabbitmq-cluster.png "rabbitmq 集群")
 
 ## 参考资料
 

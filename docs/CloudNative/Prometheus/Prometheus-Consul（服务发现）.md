@@ -101,7 +101,7 @@ node03  77926cab-0bbb-5c4a-5976-e3b354915c1e  172.16.1.132:8320  follower  true 
 
 此时，你可以访问任意一个节点，查看其健康状况，http://127.0.0.1:8500 或 http://127.0.0.1:8501 或 http://127.0.0.1:8502
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/promethues%20%2B%20consul/consul-01.png)
+![](https://cdn.agou-ops.cn/blog-images/promethues%20%2B%20consul/consul-01.png)
 
 ### 配置 Prom 实现自动服务发现
 
@@ -176,7 +176,7 @@ docker run -d -p 8080:8080 --name cadvisor-exporter google/cadvisor
 
 注册完毕后，打开 Consul 的 web 界面进行查看，http://127.0.0.1:8500
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/promethues%20%2B%20consul/consul-02.png)
+![](https://cdn.agou-ops.cn/blog-images/promethues%20%2B%20consul/consul-02.png)
 
 ### 配置并启动 Prom
 
@@ -226,7 +226,7 @@ scrape_configs:
 
 打开浏览器，访问 http://127.0.0.1:9090 进行查看
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/promethues%20%2B%20consul/consul-03.png)
+![](https://cdn.agou-ops.cn/blog-images/promethues%20%2B%20consul/consul-03.png)
 
 可以看到，妥妥没有问题，这里 `consul-node-exporter `我配置指向了 `node1 Consul` 服务地址，`consul-cadvisor-exproter` 配置指向了`node2、node3 Consul `服务，二者都能够正确发现之前注册的服务，因为 Consul 集群数据是保持同步的，无论连接哪一个节点，都能够获取到注册的服务信息，同理，我们也可以指定 `consul_sd_configs `分别指向集群所有节点，这样即使某个节点挂掉，也不会影响 Prometheus 从 Consul 集群其他节点获取注册的服务，从而实现服务的高可用。
 
@@ -322,7 +322,7 @@ curl -X PUT -d '{"id": "node-exporter","name": "node-exporter-172.16.1.132","add
 
 打开浏览器访问 http://172.16.1.132:8500/ui/dc1/services 查看是否成功注册.
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/promethues%20%2B%20consul/consul-1.png)
+![](https://cdn.agou-ops.cn/blog-images/promethues%20%2B%20consul/consul-1.png)
 
 如果想要注销该服务，需要使用：
 
@@ -346,7 +346,7 @@ curl -X PUT http://172.16.1.132:8500/v1/agent/service/deregister/node-exporter
 
 5. 打开浏览器访问 http://172.16.1.132:9090/targets
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/promethues%20%2B%20consul/consul-2.png)
+![](https://cdn.agou-ops.cn/blog-images/promethues%20%2B%20consul/consul-2.png)
 
 ---
 

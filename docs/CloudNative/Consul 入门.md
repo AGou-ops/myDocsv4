@@ -6,7 +6,7 @@ Consul 是基于 GO 语言开发的开源工具，主要面向分布式，服务
 
 ### Consul 基础架构
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/promethues%20%2B%20consul/consul-arch.png)
+![](https://cdn.agou-ops.cn/blog-images/promethues%20%2B%20consul/consul-arch.png)
 
 ## Consul 安装与配置
 

@@ -51,7 +51,7 @@ gitlab-ctl reconfigure
 
 安装完成之后, 打开浏览器进行访问即可:
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/CI%26CD/gitlab.png)
+![](https://cdn.agou-ops.cn/blog-images/CI%26CD/gitlab.png)
 
 :warning:默认用户名为`root`, 密码首次使用`GitLab`时会提示设置.
 

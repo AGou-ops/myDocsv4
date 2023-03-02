@@ -74,7 +74,7 @@ tomcat9  tomcat-test
               </Context>
 ```
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/tomcat/tomcat-3.png "具体位置")
+![](https://cdn.agou-ops.cn/blog-images/tomcat/tomcat-3.png "具体位置")
 
 启动`Tomcat-2`服务，`bash bin/startup.sh`
 
@@ -138,6 +138,6 @@ tcp   LISTEN     0      100                              [::]:8080              
 
 打开浏览器查看：
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/tomcat/tomcat-4.png "Tomcat-2")
+![](https://cdn.agou-ops.cn/blog-images/tomcat/tomcat-4.png "Tomcat-2")
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/tomcat/tomcat-5.png "Tomcat-1")
+![](https://cdn.agou-ops.cn/blog-images/tomcat/tomcat-5.png "Tomcat-1")

@@ -28,7 +28,7 @@
 > -   工作节点：指kubelet和kube-proxy连接apiserver所需要的客户端证书，而一般都会启用Bootstrap TLS机制，所以kubelet的证书初次启动会向apiserver申请颁发证书，由controller-manager组件自动颁发。
 > -   图中红线是k8s各个组件通过携带k8s自建证书颁发机构生成的客户端证书访问apiserver，图中蓝线是k8sapiserver组件通过etcd颁发的客户端证书与etcd建立连接。
 >
-> ![请添加图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/3b600f8680a443168cb556a183c19b3f.png)
+> ![请添加图片描述](https://cdn.agou-ops.cn/others/3b600f8680a443168cb556a183c19b3f.png)
 
 ### 1.4.环境准备
 
@@ -50,7 +50,7 @@
 | binary-k8s-node1   | 192.168.20.12 | kubelet、kube-proxy、docker、etcd                           |
 | binary-k8s-node2   | 192.168.20.13 | kubelet、kube-proxy、docker、etcd                           |
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/ea0354a4d3cc4b6397ee9397f42e35dc.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/ea0354a4d3cc4b6397ee9397f42e35dc.png)
 
 ### 1.5.安装cfssl证书生成工具
 
@@ -395,11 +395,11 @@ tcp        0      0 192.168.20.10:2380      0.0.0.0:*               LISTEN      
 ```
 
 配置文件状态  
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/da2f8ef902c04e77a4e555d67cc32273.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/da2f8ef902c04e77a4e555d67cc32273.png)
 
 etcd启动成功的日志
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/25e40829361b4c78b782ae1b180a90b7.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/25e40829361b4c78b782ae1b180a90b7.png)
 
 ## 4.部署Docker服务
 
@@ -473,7 +473,7 @@ kubernetes集群的master节点和node节点的二进制文件都从github上下
 
 下载地址： https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.20.md
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/36b71f10da9442808c7a950d2dedd254.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/36b71f10da9442808c7a950d2dedd254.png)
 
 ### 5.1.使用cfssl生成apiserver的证书文件
 
@@ -605,7 +605,7 @@ specifically, section 10.2.3 ("Information Requirements").
 [root@binary-k8s-master1 ~/kubernetes/server/bin]\# cp kubectl /usr/bin/
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/e7c7eb9ad3ae4b0a8800c575d4e86023.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/e7c7eb9ad3ae4b0a8800c575d4e86023.png)
 
 ### 5.3.部署kube-apiserver组件
 
@@ -695,7 +695,7 @@ TLS Bootstraping：Master apiserver启用TLS认证后，Node节点kubelet和kube
 TLS bootstraping 工作流程：
 
 kubelet首先取查找bootstraping配置文件，然后去连接apiserver，开始验证bootstrap token文件，再验证证书文件，最后颁发证书启动成功，否则就会启动失败。  
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/17a18dfd43ae4604863e590283b63ebd.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/17a18dfd43ae4604863e590283b63ebd.png)
 
 ```bash
 1.生成一个token值
@@ -840,7 +840,7 @@ specifically, section 10.2.3 ("Information Requirements").
 [root@binary-k8s-master1 ~]\# kubectl config use-context default --kubeconfig=/data/kubernetes/config/kube-controller-manager.kubeconfig  
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/877a98a70b2f47919bcaae2d9d02a4d1.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/877a98a70b2f47919bcaae2d9d02a4d1.png)
 
 #### 5.4.3.创建systemctl脚本管理服务
 
@@ -1129,7 +1129,7 @@ etcd-0               Healthy   {"health":"true"}
 etcd-2               Healthy   {"health":"true"}  
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/8ea5953c67f6460facc684905acb502c.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/8ea5953c67f6460facc684905acb502c.png)
 
 ## 6.在master节点部署node节点相关组件
 
@@ -1309,7 +1309,7 @@ tcp6       0      0 :::10250                :::*                    LISTEN      
 tcp6       0      0 :::10255                :::*                    LISTEN      29092/kubelet 
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/857b38edfb4c46e99ccd40e7fa296628.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/857b38edfb4c46e99ccd40e7fa296628.png)
 
 ### 6.3.在master节点部署kube-proxy
 
@@ -2469,7 +2469,7 @@ keepalived是主流的高可用软件，基于VIP绑定实现服务器的双机�
 
 **kube-apiserver高可用架构图**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/4166bf6696044bc1b4f47efb7cf03acd.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/4166bf6696044bc1b4f47efb7cf03acd.png)
 
 #### 10.4.1.部署Nginx负载均衡
 
@@ -2674,11 +2674,11 @@ fi
 
 **1.停掉master1上的keepalived，查看VIP是否会切换到master2节点**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/dba9f62a2a0744c3b3ccc86981ad86a4.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/dba9f62a2a0744c3b3ccc86981ad86a4.png)
 
 **2.重新启动master1上的keepalived，查看VIP是否会自动切换到master1**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/54cdc63de7c040519287127263385c0c.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/54cdc63de7c040519287127263385c0c.png)
 
 ### 10.5.切换kubernetes集群为高可用模式
 
@@ -2738,13 +2738,13 @@ etcd-2               Healthy   {"health":"true"}
 
 状态：“ok”
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/c146811a76994c2eb7ecea1a95bae2ab.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/c146811a76994c2eb7ecea1a95bae2ab.png)
 
 **2.停掉master1上所有k8s组件验证集群是否可用**
 
 状态：“ok”
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/a5cfe03d354441798591ae5add26898e.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/a5cfe03d354441798591ae5add26898e.png)
 
 ## 12.在kubernetes集群运行一套服务验证集群的可用性
 
@@ -2809,7 +2809,7 @@ service/kubernetes            ClusterIP   10.0.0.1     <none>        443/TCP    
 
 访问https://集群任意节点+32702端口即可浏览web服务。
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/8c7dc7f2aad14d74a07b8ab6c35e09a9.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/8c7dc7f2aad14d74a07b8ab6c35e09a9.png)
 
 ## 13.部署kubernetes dashboard
 
@@ -2870,11 +2870,11 @@ service/kubernetes-dashboard        NodePort    10.0.0.153   <none>        443:3
 
 访问https://集群任意节点+30001端口，然后填写刚刚查到的token值，点击登陆。
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/2c6c6346e8854ffcb85a23d3569c056e.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/2c6c6346e8854ffcb85a23d3569c056e.png)
 
 仪表盘
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/f2dfdb9364bb4b0e875851131d711e34.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/f2dfdb9364bb4b0e875851131d711e34.png)
 
 
 > :warning:转载自：https://jiangxl.blog.csdn.net/article/details/120428703

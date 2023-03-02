@@ -48,7 +48,7 @@ Redis 集群使用数据分片（sharding）而非一致性哈希（consistency 
 
 ### 主从复制原理
 
-![image-20211103173116252](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20211103173116252.png)
+![image-20211103173116252](https://cdn.agou-ops.cn/others/image-20211103173116252.png)
 
 图片来源于网络。
 
@@ -72,7 +72,7 @@ mkdir /usr/local/redis/redis-cluster -p
 cd /usr/local/redis/redis-cluster && mkdir -pv 700{1..6}
 ```
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/redis/redis-1.png)
+![](https://cdn.agou-ops.cn/blog-images/redis/redis-1.png)
 
 将程序及配置文件分别复制到各个节点文件夹中去：
 
@@ -122,7 +122,7 @@ root       2520  0.3  0.2  64360  5284 ?        Ssl  13:59   0:00 ./redis-server
 
 期间会让你确认配置信息，如果检查无误，输入`yes`，然后回车即可.
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/redis/redis-2.png)
+![](https://cdn.agou-ops.cn/blog-images/redis/redis-2.png)
 
 到这里，Redis-Cluster 部署就完成了。
 

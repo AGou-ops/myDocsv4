@@ -34,6 +34,6 @@ bin/cmak
 
 打开浏览器访问：http://YOUR_IP:9000
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/kafka/cmak.png)
+![](https://cdn.agou-ops.cn/blog-images/kafka/cmak.png)
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/kafka/cmak-1.png)
+![](https://cdn.agou-ops.cn/blog-images/kafka/cmak-1.png)

@@ -10,7 +10,7 @@
 
 nginx—>filebeat—>kafka—>logstash—>elasticsearch—>kibana
 
-![部署ELK+Kafka+Filebeat日志收集分析系统_zookeeper](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/15161541_6192172dd80c687461.png)
+![部署ELK+Kafka+Filebeat日志收集分析系统_zookeeper](https://cdn.agou-ops.cn/others/15161541_6192172dd80c687461.png)
 
 ## 2.部署elasticsearch集群
 
@@ -97,7 +97,7 @@ http.cors.allow-origin: "*"
 
 ### 2.4.使用es-head插件查看集群状态
 
-![部署ELK+Kafka+Filebeat日志收集分析系统_elasticsearch_02](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/15161542_6192172e2208446472.png)
+![部署ELK+Kafka+Filebeat日志收集分析系统_elasticsearch_02](https://cdn.agou-ops.cn/others/15161542_6192172e2208446472.png)
 
 ## 3.部署kibana
 ```sh
@@ -118,7 +118,7 @@ i18n.locale: "zh-CN"
 
 **kibana部署成功**
 
-![部署ELK+Kafka+Filebeat日志收集分析系统_tomcat_03](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/15161542_6192172e5cf4662193.png)
+![部署ELK+Kafka+Filebeat日志收集分析系统_tomcat_03](https://cdn.agou-ops.cn/others/15161542_6192172e5cf4662193.png)
 
 ## 4.部署zookeeper
 
@@ -384,7 +384,7 @@ test10
 [root@elk-1 /data/kafka]\# ./bin/kafka-topics.sh --delete --zookeeper 192.168.81.210:2181  --topic testpic
 ```
 
-![部署ELK+Kafka+Filebeat日志收集分析系统_elasticsearch_04](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/15161542_6192172e99f3c64443.png)
+![部署ELK+Kafka+Filebeat日志收集分析系统_elasticsearch_04](https://cdn.agou-ops.cn/others/15161542_6192172e99f3c64443.png)
 
 ## 7.配置filebeat收集nginx、tomcat日志并存储到kafka中
 
@@ -508,7 +508,7 @@ tomcat-cata
 [root@elk-1 /data/kafka]\# tail -f logs/kafkaServer.out
 ```
 
-![部署ELK+Kafka+Filebeat日志收集分析系统_zookeeper_05](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/15161542_6192172ed66b168251.png)
+![部署ELK+Kafka+Filebeat日志收集分析系统_zookeeper_05](https://cdn.agou-ops.cn/others/15161542_6192172ed66b168251.png)
 
 ## 8.配置logstash从kafka中读取数据并存储到es集群
 
@@ -585,7 +585,7 @@ output {				#目标端
 ```
 
 观察日志的输出，已经从nginx-access、tomcat-cata topic中读取了数据并存到了es集群中
-![部署ELK+Kafka+Filebeat日志收集分析系统_tomcat_06](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/15161543_6192172f20d8487918.png)
+![部署ELK+Kafka+Filebeat日志收集分析系统_tomcat_06](https://cdn.agou-ops.cn/others/15161543_6192172f20d8487918.png)
 
 ### 8.4.查看elasticsearch集群是否增加了对应的索引库
 
@@ -593,39 +593,39 @@ es集群已经生成了tomcat-cata以及nginx-access索引库
 
 到此为止logstash已经成功从kafka集群读取到日志数据，然后传入到elasticsearch集群不同的索引库
 
-![部署ELK+Kafka+Filebeat日志收集分析系统_1024程序员节_07](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/15161543_6192172f6b5b67224.png)
+![部署ELK+Kafka+Filebeat日志收集分析系统_1024程序员节_07](https://cdn.agou-ops.cn/others/15161543_6192172f6b5b67224.png)
 
 ## 9.在kibana上关联elasticsearch索引库浏览日志数据
 
 ### 9.1.在kibana上添加nginx-access索引模式
 
 **1）点击创建索引**
-![部署ELK+Kafka+Filebeat日志收集分析系统_kafka_08](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/15161543_6192172fa3ee935312.png)
+![部署ELK+Kafka+Filebeat日志收集分析系统_kafka_08](https://cdn.agou-ops.cn/others/15161543_6192172fa3ee935312.png)
 
 **2）填写索引名**
 
 采用通配符的方式，填写完点击下一步完成创建即可
 
-![部署ELK+Kafka+Filebeat日志收集分析系统_zookeeper_09](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/15161543_6192172fe813235099.png)
+![部署ELK+Kafka+Filebeat日志收集分析系统_zookeeper_09](https://cdn.agou-ops.cn/others/15161543_6192172fe813235099.png)
 
 **3）添加一个时间筛选字段**
-![部署ELK+Kafka+Filebeat日志收集分析系统_zookeeper_10](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/15161544_619217301599772249.png)
+![部署ELK+Kafka+Filebeat日志收集分析系统_zookeeper_10](https://cdn.agou-ops.cn/others/15161544_619217301599772249.png)
 
 **4）创建成功**
 
-![部署ELK+Kafka+Filebeat日志收集分析系统_kafka_11](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/15161544_61921730520fc89749.png)
+![部署ELK+Kafka+Filebeat日志收集分析系统_kafka_11](https://cdn.agou-ops.cn/others/15161544_61921730520fc89749.png)
 
 ### 9.2.同样方法添加tomcat-cata索引模式
 
-![部署ELK+Kafka+Filebeat日志收集分析系统_elasticsearch_12](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/15161544_619217308f43698189.png)
+![部署ELK+Kafka+Filebeat日志收集分析系统_elasticsearch_12](https://cdn.agou-ops.cn/others/15161544_619217308f43698189.png)
 
 ### 9.3.查询nginx-access索引日志数据
 
-![部署ELK+Kafka+Filebeat日志收集分析系统_tomcat_13](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/15161544_61921730bfbdb30760.png)
+![部署ELK+Kafka+Filebeat日志收集分析系统_tomcat_13](https://cdn.agou-ops.cn/others/15161544_61921730bfbdb30760.png)
 
 ### 9.4.查看tomcat-cata索引日志数据
 
-![部署ELK+Kafka+Filebeat日志收集分析系统_elasticsearch_14](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/15161545_619217310054824479.png)
+![部署ELK+Kafka+Filebeat日志收集分析系统_elasticsearch_14](https://cdn.agou-ops.cn/others/15161545_619217310054824479.png)
 
 ## 10.报错合集
 
@@ -634,7 +634,7 @@ es集群已经生成了tomcat-cata以及nginx-access索引库
 > 报错内容如下
 >
 > 解决方法：仔细检查配置文件，肯定是某个地址配置错了，我的就是监听地址的ip写错了
-> ![部署ELK+Kafka+Filebeat日志收集分析系统_zookeeper_15](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/15161545_619217314c98b91590.png)
+> ![部署ELK+Kafka+Filebeat日志收集分析系统_zookeeper_15](https://cdn.agou-ops.cn/others/15161545_619217314c98b91590.png)
 
 ### 10.2.filebeat写入数据到kafka api版本报错
 
@@ -642,7 +642,7 @@ es集群已经生成了tomcat-cata以及nginx-access索引库
 >
 > 分析解决思路：初步判定为kafka2.11版本问题导致的，换成2.13问题解决
 
-![部署ELK+Kafka+Filebeat日志收集分析系统_1024程序员节_16](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/15161545_61921731a26b641259.png)
+![部署ELK+Kafka+Filebeat日志收集分析系统_1024程序员节_16](https://cdn.agou-ops.cn/others/15161545_61921731a26b641259.png)
 
 > 来自：https://blog.51cto.com/jiangxl/4597031
 >

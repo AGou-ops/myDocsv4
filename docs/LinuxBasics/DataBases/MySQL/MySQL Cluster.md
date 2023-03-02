@@ -4,7 +4,7 @@
 
 参考：https://zhuanlan.zhihu.com/p/96212530
 
-![原理](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/mysql/mysql-1.jpg)
+![原理](https://cdn.agou-ops.cn/blog-images/mysql/mysql-1.jpg)
 
 ## MySQL 主从同步
 

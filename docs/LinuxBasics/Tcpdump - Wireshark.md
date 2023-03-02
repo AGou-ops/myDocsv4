@@ -13,7 +13,7 @@ tcpdump -i eth0 -c 5 icmp and host 192.168.1.1 -nn
 tcpdump -i any tcp and host 192.168.2.100 and port 80 -w http.pcap
 ```
 
-![tcpdump 常用过滤表达式类](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/8.jpg)
+![tcpdump 常用过滤表达式类](https://cdn.agou-ops.cn/others/8.jpg)
 
 
 

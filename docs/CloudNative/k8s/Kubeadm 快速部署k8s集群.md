@@ -5,7 +5,7 @@ kubernetes集群大体上分为两类，一主多从和多主多从
 - 一主多从：一台master节点和多台node节点，搭建简单，但是有单机故障风险，适合用于测试环境
 - 多主多从：多台master节点和多台node节点，搭建麻烦，安全性高，适合用于生产环境
 
-![kubeadm方式部署Kubernetes1.19集群环境（二）_其他](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/31072119_61ce3eef1c8d185797.png)
+![kubeadm方式部署Kubernetes1.19集群环境（二）_其他](https://cdn.agou-ops.cn/others/31072119_61ce3eef1c8d185797.png)
 
 ## 2.集群安装方式
 
@@ -181,7 +181,7 @@ docker默认情况下使用cgroup driver作为cgroupfs，而k8s推荐使用syste
 [root@k8s-master ~]\# docker version
 ```
 
-![kubeadm方式部署Kubernetes1.19集群环境（二）_其他_02](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/31072119_61ce3eef66b7188674.png)
+![kubeadm方式部署Kubernetes1.19集群环境（二）_其他_02](https://cdn.agou-ops.cn/others/31072119_61ce3eef66b7188674.png)
 
 ### 5.2.所有节点安装kubernetes组件
 ```sh
@@ -215,15 +215,15 @@ KUBE_PROXY_MODE="ipvs"
 
 > 选择软件版本
 
-![kubeadm方式部署Kubernetes1.19集群环境（二）_其他_03](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/31072119_61ce3eeff1c5061461.png)
+![kubeadm方式部署Kubernetes1.19集群环境（二）_其他_03](https://cdn.agou-ops.cn/others/31072119_61ce3eeff1c5061461.png)
 
 > 所有节点成功安装kubeadm、kublet、kubectl
 
-![kubeadm方式部署Kubernetes1.19集群环境（二）_docker_04](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/31072120_61ce3ef0681be88204.png)
+![kubeadm方式部署Kubernetes1.19集群环境（二）_docker_04](https://cdn.agou-ops.cn/others/31072120_61ce3ef0681be88204.png)
 
 > 安装完kubelet先不用启动，启动会报错
 
-![kubeadm方式部署Kubernetes1.19集群环境（二）_linux_05](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/31072120_61ce3ef0bb97f70034.png)
+![kubeadm方式部署Kubernetes1.19集群环境（二）_linux_05](https://cdn.agou-ops.cn/others/31072120_61ce3ef0bb97f70034.png)
 
 ### 5.3.所有节点准备集群组件镜像包
 
@@ -311,7 +311,7 @@ k8s-master   NotReady   master   12m   v1.19.6
 > kubeadm join 192.168.81.210:6443 --token z0hiaw.woiwvjvx8o1kd4ef
 > –discovery-token-ca-cert-hash sha256:4009b1fad096615c3409fcd670feb8a915f7f1f6eb03bc3adcb1164cf871b960
 
-![kubeadm方式部署Kubernetes1.19集群环境（二）_linux_06](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/31072121_61ce3ef13526811335.png)
+![kubeadm方式部署Kubernetes1.19集群环境（二）_linux_06](https://cdn.agou-ops.cn/others/31072121_61ce3ef13526811335.png)
 
 ### 5.5.node节点初始化
 
@@ -336,7 +336,7 @@ k8s-node1    NotReady   \<none\>   51s   v1.19.6
 k8s-node2    NotReady   \<none\>   10s   v1.19.6
 ```
 
-![kubeadm方式部署Kubernetes1.19集群环境（二）_linux_07](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/31072121_61ce3ef1ac9e171538.png)
+![kubeadm方式部署Kubernetes1.19集群环境（二）_linux_07](https://cdn.agou-ops.cn/others/31072121_61ce3ef1ac9e171538.png)
 
 ### 5.6.集群配置flannel网络
 ```sh
@@ -392,7 +392,7 @@ kube-scheduler-k8s-master            1/1     Running   0          70m
 >
 > 集群安装好之后所有操作都在master上进行
 
-![kubeadm方式部署Kubernetes1.19集群环境（二）_初始化_08](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/31072122_61ce3ef23c59f85508.png)
+![kubeadm方式部署Kubernetes1.19集群环境（二）_初始化_08](https://cdn.agou-ops.cn/others/31072122_61ce3ef23c59f85508.png)
 
 ## 6.部署一个nginx容器验证集群可用性
 ```sh
@@ -416,7 +416,7 @@ nginx-6d4cf56db6-wwmvl   1/1     Running   0          3m59s   10.244.1.4   k8s-n
 
 > 30376就是svc暴露出的随机端口，使用集群节点任意ip都可以访问到30376端口的应用
 
-![kubeadm方式部署Kubernetes1.19集群环境（二）_其他_09](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/31072122_61ce3ef2974ec5568.png)
+![kubeadm方式部署Kubernetes1.19集群环境（二）_其他_09](https://cdn.agou-ops.cn/others/31072122_61ce3ef2974ec5568.png)
 
 ## 7.k8s命令开启tab功能
 ```sh
@@ -444,7 +444,7 @@ docker run -d --restart=unless-stopped -p 80:80 -p 443:443 \
 
 > 导入集群
 
-![kubeadm方式部署Kubernetes1.19集群环境（二）_linux_10](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/31072122_61ce3ef2bddb656521.png)
+![kubeadm方式部署Kubernetes1.19集群环境（二）_linux_10](https://cdn.agou-ops.cn/others/31072122_61ce3ef2bddb656521.png)
 ```sh
 1.加入rancher
 [root@k8s-master ~]\# curl --insecure -sfL https://192.168.16.107/v3/import/bpgwzbwqm7lwk48s89mw98llm6cnvgvx64x7lmvwjn88xn4b22l2ql.yaml | kubectl apply -f -
@@ -461,7 +461,7 @@ cattle-node-agent-gtf4s                 1/1     Running   0          54m
 
 ```
 
-![kubeadm方式部署Kubernetes1.19集群环境（二）_其他_11](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/31072123_61ce3ef31268a2979.png)
+![kubeadm方式部署Kubernetes1.19集群环境（二）_其他_11](https://cdn.agou-ops.cn/others/31072123_61ce3ef31268a2979.png)
 
 > 文章来源于：https://blog.51cto.com/jiangxl/4803878
 >

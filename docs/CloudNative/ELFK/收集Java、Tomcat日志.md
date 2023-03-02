@@ -88,15 +88,15 @@ bin/logstash -f config/java_tomcat.conf
 
 打开浏览器访问logstash的web管理页面, 找到以下页面, 并添加一个索引:
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/elk%20stack/log/java-tomcat-log-1.png "添加索引")
+![](https://cdn.agou-ops.cn/blog-images/elk%20stack/log/java-tomcat-log-1.png "添加索引")
 
 随后打开`Dashboard`进行查看:
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/elk%20stack/log/java-tomcat-log-2.png "查看")
+![](https://cdn.agou-ops.cn/blog-images/elk%20stack/log/java-tomcat-log-2.png "查看")
 
 在`elasticsearch`的web面板中查看:
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/elk%20stack/log/java-tomcat-log-3.png "es 中查看")
+![](https://cdn.agou-ops.cn/blog-images/elk%20stack/log/java-tomcat-log-3.png "es 中查看")
 
 ## 日志合并-Multiline codec plugin
 

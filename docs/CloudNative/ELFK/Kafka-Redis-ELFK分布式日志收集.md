@@ -1,10 +1,10 @@
 # Kafka/Redis + ELFK分布式日志收集
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/elk%20stack/log_collect.png )
+![](https://cdn.agou-ops.cn/blog-images/elk%20stack/log_collect.png )
 
 ***Filebeat --> Kafka --> Logstash --> ES Cluster --> Kibana/Grafana***
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/elk%20stack/redis%2BELFK.png)
+![](https://cdn.agou-ops.cn/blog-images/elk%20stack/redis%2BELFK.png)
 
 ***Filebeat --> Redis --> Logstash --> ES Cluster --> Kibana/Grafana***
 
@@ -67,7 +67,7 @@ output.redis:
 
 如果你已经安装好了`kafka-manager`, 可以在面板上看到相关`topic`已经创建, 并且写入数据之后, 已经有了分区偏移量, 如下图所示:
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/elk%20stack/Filebeat%2BKafka%2BELK.png "kafka-manager")
+![](https://cdn.agou-ops.cn/blog-images/elk%20stack/Filebeat%2BKafka%2BELK.png "kafka-manager")
 
 > 检测`filebeat`是否将日志传递给`kafka`:
 > ```bash
@@ -141,11 +141,11 @@ input {
 
 启动`es`和`logstash`之后, 打开浏览器, 使用插件访问`elasticsearch`的web管理页面, 查看是否已经收集到`tomcat`日志信息.
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/elk%20stack/Filebeat%2BKafka%2BELK-2.png "elasticsearch")
+![](https://cdn.agou-ops.cn/blog-images/elk%20stack/Filebeat%2BKafka%2BELK-2.png "elasticsearch")
 
 打开`Kibana`管理界面, 添加索引, 并在`Dashboard`中查看来自`Logstash`的日志.
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/elk%20stack/Filebeat%2BKafka%2BELK-3.png "Kibana")
+![](https://cdn.agou-ops.cn/blog-images/elk%20stack/Filebeat%2BKafka%2BELK-3.png "Kibana")
 
 ## 参考链接
 

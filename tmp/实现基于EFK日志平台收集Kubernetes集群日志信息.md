@@ -3,7 +3,7 @@
 > EFK其实和ELK差不多，只不过EFK是k8s专门的日志收集平台，其中的F是fluentd
 >
 > 首先通过fluentd收集程序的日志，然后将日志存储到elasticsearch集群，最后在kibana上关联elasticsearch，实现日志的查询。
-> ![实现基于EFK日志平台收集Kubernetes集群日志信息_docker](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/16044814_620c118edfe6953900.png)
+> ![实现基于EFK日志平台收集Kubernetes集群日志信息_docker](https://cdn.agou-ops.cn/others/16044814_620c118edfe6953900.png)
 
 - Elasticsearch
     - 一个开源的分布式、Restful 风格的搜索和数据分析引擎，它的底层是开源库Apache Lucene。
@@ -14,7 +14,7 @@
     - 一个针对日志的收集、处理、转发系统。通过丰富的插件系统，可以收集来自于各种系统或应用的日志，转化为用户指定的格式后，转发到用户所指定的日志存储系统之中。
     - Fluentd通过一组给定的数据源抓取日志数据，处理后，将它们转发给其他服务，比如elasticsearch、对象存储、kafka等
 
-![实现基于EFK日志平台收集Kubernetes集群日志信息_nginx_02](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/16044815_620c118f332f876321.png)
+![实现基于EFK日志平台收集Kubernetes集群日志信息_nginx_02](https://cdn.agou-ops.cn/others/16044815_620c118f332f876321.png)
 
 - Kibana
 
@@ -102,7 +102,7 @@ T https microsoft.test2.cn https://microsoft.test2.cn/ HTTP/1.0 247 58.49.156.13
 156.139" "_" "_" "_" "_" - - 0.005 502 0f547fb6de9odc9778c48e35b9a8acb7' >>/fluentd/access.log
 ```
 
-![实现基于EFK日志平台收集Kubernetes集群日志信息_elasticsearch_03](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/16044815_620c118f926e91114.png)
+![实现基于EFK日志平台收集Kubernetes集群日志信息_elasticsearch_03](https://cdn.agou-ops.cn/others/16044815_620c118f926e91114.png)
 
 ## 2.部署EFK平台
 
@@ -240,11 +240,11 @@ Password: admin
 ```
 
 在harbor上新建项目
-![实现基于EFK日志平台收集Kubernetes集群日志信息_elasticsearch_04](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/16044816_620c11902a94067440.png)
+![实现基于EFK日志平台收集Kubernetes集群日志信息_elasticsearch_04](https://cdn.agou-ops.cn/others/16044816_620c11902a94067440.png)
 
 进入项目，将项目设置为公开，如果不设置为公开，拉取镜像会失败
 
-![实现基于EFK日志平台收集Kubernetes集群日志信息_其他_05](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/16044816_620c11907050745715.png)
+![实现基于EFK日志平台收集Kubernetes集群日志信息_其他_05](https://cdn.agou-ops.cn/others/16044816_620c11907050745715.png)
 ```sh
 3.给镜像打标签
 [root@k8s-master1 EFK]\# docker tag elasticsearch:7.4.2 harbor.jiangxl.com/efk/elasticsearch:7.4.2
@@ -255,7 +255,7 @@ Password: admin
 [root@k8s-master1 EFK]\# docker push harbor.jiangxl.com/efk/alpine:3.6
 ```
 
-![实现基于EFK日志平台收集Kubernetes集群日志信息_nginx_06](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/16044816_620c1190b5cba39236.png)
+![实现基于EFK日志平台收集Kubernetes集群日志信息_nginx_06](https://cdn.agou-ops.cn/others/16044816_620c1190b5cba39236.png)
 
 #### 2.2.3.编写elasticsearch yaml文件
 ```yaml
@@ -608,7 +608,7 @@ ingress.extensions/kibana   <none>   kibana.jiangxl.com             80      26m
 >
 > http://kibana.jiangxl.com
 
-![实现基于EFK日志平台收集Kubernetes集群日志信息_nginx_07](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/16044817_620c1191081b724117.png)
+![实现基于EFK日志平台收集Kubernetes集群日志信息_nginx_07](https://cdn.agou-ops.cn/others/16044817_620c1191081b724117.png)
 
 ### 2.4.部署fluentd
 
@@ -884,7 +884,7 @@ statefulset.apps/elasticsearch   1/1     31h
 
 ```
 
-![实现基于EFK日志平台收集Kubernetes集群日志信息_其他_08](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/16044817_620c11914da0258358.png)
+![实现基于EFK日志平台收集Kubernetes集群日志信息_其他_08](https://cdn.agou-ops.cn/others/16044817_620c11914da0258358.png)
 
 ### 2.6.将es配置一个nodeport用于查看索引
 ```sh
@@ -953,40 +953,40 @@ test-efk                  1/1     Running   0          18m    100.64.169.147   k
 ```
 
 已经收集到test-efk pod的日志了
-![实现基于EFK日志平台收集Kubernetes集群日志信息_nginx_09](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/16044817_620c1191963a769274.png)
+![实现基于EFK日志平台收集Kubernetes集群日志信息_nginx_09](https://cdn.agou-ops.cn/others/16044817_620c1191963a769274.png)
 
 ### 3.3.观察es上的索引变化
 
 > 由于2.6中已经将es的9200做了一个nodeport暴露，可以通过es-head插件查看es索引库
 >
 > 可以看到在es上已经有索引产生了
-> ![实现基于EFK日志平台收集Kubernetes集群日志信息_docker_10](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/16044817_620c1191f112c87951.png)
+> ![实现基于EFK日志平台收集Kubernetes集群日志信息_docker_10](https://cdn.agou-ops.cn/others/16044817_620c1191f112c87951.png)
 
 ### 3.4.在kibana上关联es索引库
 
 **1）点击设置—>index patterns—>create index pattern**
 
-![实现基于EFK日志平台收集Kubernetes集群日志信息_docker_11](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/16044818_620c11924ad7b37598.png)
+![实现基于EFK日志平台收集Kubernetes集群日志信息_docker_11](https://cdn.agou-ops.cn/others/16044818_620c11924ad7b37598.png)
 
 **2）索引名称填写logstash-\*即可匹配所有logstash的索引库**
 
-![实现基于EFK日志平台收集Kubernetes集群日志信息_elasticsearch_12](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/16044818_620c11929a48715584.png)
+![实现基于EFK日志平台收集Kubernetes集群日志信息_elasticsearch_12](https://cdn.agou-ops.cn/others/16044818_620c11929a48715584.png)
 
 **3）匹配所有字段，点击创建索引**
-![实现基于EFK日志平台收集Kubernetes集群日志信息_nginx_13](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/16044818_620c1192f3c2f49565.png)
+![实现基于EFK日志平台收集Kubernetes集群日志信息_nginx_13](https://cdn.agou-ops.cn/others/16044818_620c1192f3c2f49565.png)
 
 **4）可以看到收集过来很多日志字段**
-![实现基于EFK日志平台收集Kubernetes集群日志信息_docker_14](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/16044819_620c119334a455865.png)
+![实现基于EFK日志平台收集Kubernetes集群日志信息_docker_14](https://cdn.agou-ops.cn/others/16044819_620c119334a455865.png)
 
 ### 3.5.查看日志收集的统计图
 
 **1）查看全部日志**
 
-![实现基于EFK日志平台收集Kubernetes集群日志信息_elasticsearch_15](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/16044819_620c11937e76417952.png)
+![实现基于EFK日志平台收集Kubernetes集群日志信息_elasticsearch_15](https://cdn.agou-ops.cn/others/16044819_620c11937e76417952.png)
 
 **2）过滤test-efk pod的日志**
 
-![实现基于EFK日志平台收集Kubernetes集群日志信息_elasticsearch_16](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/16044819_620c1193ddd5617506.png)
+![实现基于EFK日志平台收集Kubernetes集群日志信息_elasticsearch_16](https://cdn.agou-ops.cn/others/16044819_620c1193ddd5617506.png)
 
 > 该文章为转载内容，仅做备份私人学习使用，原文：https://blog.51cto.com/jiangxl/5076636
 

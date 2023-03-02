@@ -2,7 +2,7 @@
 
 ## Netfilter 机制
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpbHlnZw==,size_16,color_FFFFFF,t_70.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpbHlnZw==,size_16,color_FFFFFF,t_70.png)
 
 
 
@@ -26,7 +26,7 @@
 
 ## iptables
 
-![iptables dataflo](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/ac586d71025972c3c200ca6bc96917c5.png)
+![iptables dataflo](https://cdn.agou-ops.cn/others/ac586d71025972c3c200ca6bc96917c5.png)
 
 ### 五链：
 
@@ -51,7 +51,7 @@ POSTROUTING链：在对数据包作路由选择之后，应用此链中的规则
 
 并非所有的链都可以应用所有的表，以下是他们的对应关系（上下顺序为表的优先级）：
 
-![hook point chain - table](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/55afd069e4f1ba01d87cee0b9322c6c7.png)
+![hook point chain - table](https://cdn.agou-ops.cn/others/55afd069e4f1ba01d87cee0b9322c6c7.png)
 
 简单记住：`filter`表可以管理`INPUT/FORWARD/OUTPUT`链，`nat`表可以管理`PREROUTING/INPUT/OUTPUT/POSTROUTING`链。
 
@@ -228,7 +228,7 @@ Vr HL TOS  Len   ID Flg  off TTL Pro  cks      Src      Dst
 ```
 
 (2). firewalld域
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpbHlnZw==,size_16,color_FFFFFF,t_70-20220617134856888.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpbHlnZw==,size_16,color_FFFFFF,t_70-20220617134856888.png)
 
 注：firewalld的默认区域是public
 

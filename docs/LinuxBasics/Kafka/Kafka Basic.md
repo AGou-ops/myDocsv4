@@ -22,7 +22,7 @@ Kafka架构：
 
 存储机制：
 
-![img](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/bVbDJMc.png)
+![img](https://cdn.agou-ops.cn/others/bVbDJMc.png)
 
 - `topic`： 可以理解为一个消息队列的名字
 - `partition`：为了实现扩展性，一个非常大的topic可以分布到多个 broker（即服务器）上，一个topic可以分为多个partition，每个partition是一个有序的队列

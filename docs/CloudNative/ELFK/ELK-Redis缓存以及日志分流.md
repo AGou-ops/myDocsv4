@@ -1,4 +1,4 @@
-![配置logstash从redis读取filebeat收集的日志（上）_elasticsearch](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=.png)
+![配置logstash从redis读取filebeat收集的日志（上）_elasticsearch](https://cdn.agou-ops.cn/others/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=.png)
 
 
 

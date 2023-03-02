@@ -105,7 +105,7 @@ sudo mount -t ceph 172.16.1.128:6789:/ /mnt/mycephfs -o name=admin,secret=AQCKK9
 
 在`Dashboard`中查看`CephFS`：
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/ceph-dashboard/ceph-dashboard-2.png "在`Dashboard`中查看`CephFS`")
+![](https://cdn.agou-ops.cn/blog-images/ceph-dashboard/ceph-dashboard-2.png "在`Dashboard`中查看`CephFS`")
 
 ## MOUNT CEPHFS USING FUSE
 

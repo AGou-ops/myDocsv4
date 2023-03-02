@@ -160,7 +160,7 @@ cat $SONAR_HOME/logs/web.log
 
 成功启动后，可以访问 `http://127.0.0.1:9000`
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/CI%26CD/sonarqube-1.png)
+![](https://cdn.agou-ops.cn/blog-images/CI%26CD/sonarqube-1.png)
 
 :information_source:默认账号密码均为`admin`.
 
@@ -205,7 +205,7 @@ $ docker run -d --name sonarqube \
 
 参考: https://my.oschina.net/u/4313515/blog/4187313
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/CI%26CD/sonarqube-3.png)
+![](https://cdn.agou-ops.cn/blog-images/CI%26CD/sonarqube-3.png)
 
 ## sonarqube 汉化
 
@@ -221,7 +221,7 @@ wget https://github.com/SonarQubeCommunity/sonar-l10n-zh/releases/download/sonar
 
 依次点击 `Administration --> Marketplace`, 然后搜索`Chinese Pack`进行安装.
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/CI%26CD/sonarqube-2.png)
+![](https://cdn.agou-ops.cn/blog-images/CI%26CD/sonarqube-2.png)
 
 安装完成之后会提示你重启`sonarqube`, 按照提示重启即可.
 

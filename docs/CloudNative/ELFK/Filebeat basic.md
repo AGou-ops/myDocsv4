@@ -153,7 +153,7 @@ bin/logstash -f conf/beat2es.conf
 
 打开浏览器的`ES`插件，然后连接上主机的`ES`，点击`Browser`进行查看：
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/elk%20stack/filbeat-1.png "截图")
+![](https://cdn.agou-ops.cn/blog-images/elk%20stack/filbeat-1.png "截图")
 
 ## 输出到 Redis
 

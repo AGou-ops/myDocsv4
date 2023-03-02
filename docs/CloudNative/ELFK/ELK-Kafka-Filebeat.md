@@ -12,7 +12,7 @@
 
 nginx—>filebeat—>kafka—>logstash—>elasticsearch—>kibana
 
-![请添加图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/b9066d7fba54457688d3d8801ae405c4.png)
+![请添加图片描述](https://cdn.agou-ops.cn/others/b9066d7fba54457688d3d8801ae405c4.png)
 
 ## 2.部署elasticsearch集群
 
@@ -102,7 +102,7 @@ http.cors.allow-origin: "*"
 
 ### 2.4.使用es-head插件查看集群状态
 
-![请添加图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/b9dd64efa7e14925867b0305a8978a8d.png)
+![请添加图片描述](https://cdn.agou-ops.cn/others/b9dd64efa7e14925867b0305a8978a8d.png)
 
 ## 3.部署kibana
 
@@ -124,7 +124,7 @@ i18n.locale: "zh-CN"
 
 **kibana部署成功**
 
-![请添加图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/6424482e309e41be978d64816562e14b.png)
+![请添加图片描述](https://cdn.agou-ops.cn/others/6424482e309e41be978d64816562e14b.png)
 
 ## 4.部署zookeeper
 
@@ -399,7 +399,7 @@ test10
 [root@elk-1 /data/kafka]\# ./bin/kafka-topics.sh --delete --zookeeper 192.168.81.210:2181  --topic testpic
 ```
 
-![请添加图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/61738bb4dacf417784c5a62ce3388bdd.png)
+![请添加图片描述](https://cdn.agou-ops.cn/others/61738bb4dacf417784c5a62ce3388bdd.png)
 
 ## 7.配置filebeat收集nginx、tomcat日志并存储到kafka中
 
@@ -531,7 +531,7 @@ tomcat-cata
 [root@elk-1 /data/kafka]\# tail -f logs/kafkaServer.out
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/ec8b60b64feb4c1c818b878612dce48d.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/ec8b60b64feb4c1c818b878612dce48d.png)
 
 ## 8.配置logstash从kafka中读取数据并存储到es集群
 
@@ -611,7 +611,7 @@ output {        #目标端
 ```
 
 观察日志的输出，已经从nginx-access、tomcat-cata topic中读取了数据并存到了es集群中
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/dea0c0f1f103481c9a73df6a82ca16d7.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/dea0c0f1f103481c9a73df6a82ca16d7.png)
 
 ### 8.4.查看elasticsearch集群是否增加了对应的索引库
 
@@ -619,39 +619,39 @@ es集群已经生成了tomcat-cata以及nginx-access索引库
 
 到此为止logstash已经成功从kafka集群读取到日志数据，然后传入到elasticsearch集群不同的索引库
 
-![请添加图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/186fadff16cc45d188cb2ee02b40d11f.png)
+![请添加图片描述](https://cdn.agou-ops.cn/others/186fadff16cc45d188cb2ee02b40d11f.png)
 
 ## 9.在kibana上关联elasticsearch索引库浏览日志数据
 
 ### 9.1.在kibana上添加nginx-access索引模式
 
 **1）点击创建索引**
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/70a3b3aeb1c4474e8326021566c7f70c.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/70a3b3aeb1c4474e8326021566c7f70c.png)
 
 **2）填写索引名**
 
 采用通配符的方式，填写完点击下一步完成创建即可
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/b31ee5436a13417eb40c9fa57c36b010.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/b31ee5436a13417eb40c9fa57c36b010.png)
 
 **3）添加一个时间筛选字段**
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/7dc6fe61a48247419859ea2b10770f36.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/7dc6fe61a48247419859ea2b10770f36.png)
 
 **4）创建成功**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/9d02b90e81b54360a8952d356453cdfc.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/9d02b90e81b54360a8952d356453cdfc.png)
 
 ### 9.2.同样方法添加tomcat-cata索引模式
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/f64e10dd7823423cb905551c93340751.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/f64e10dd7823423cb905551c93340751.png)
 
 ### 9.3.查询nginx-access索引日志数据
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/4540ea34a2d44141a0faff48019d077d.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/4540ea34a2d44141a0faff48019d077d.png)
 
 ### 9.4.查看tomcat-cata索引日志数据
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/9317c5e4851d40178f101c88058e8cbc.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/9317c5e4851d40178f101c88058e8cbc.png)
 
 ## 10.报错合集
 
@@ -660,7 +660,7 @@ es集群已经生成了tomcat-cata以及nginx-access索引库
 > 报错内容如下
 >
 > 解决方法：仔细检查配置文件，肯定是某个地址配置错了，我的就是监听地址的ip写错了
-> ![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/146eb6476be4493ab8285c8457087ac2.png)
+> ![在这里插入图片描述](https://cdn.agou-ops.cn/others/146eb6476be4493ab8285c8457087ac2.png)
 
 ### 10.2.filebeat写入数据到kafka api版本报错
 
@@ -668,7 +668,7 @@ es集群已经生成了tomcat-cata以及nginx-access索引库
 >
 > 分析解决思路：初步判定为kafka2.11版本问题导致的，换成2.13问题解决
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/cb481cdb7ef5411795728d7d4bdc4843.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/cb481cdb7ef5411795728d7d4bdc4843.png)
 
 > 该文章为转载内容，仅做备份私人学习使用，原文：https://jiangxl.blog.csdn.net/article/details/119733673
 

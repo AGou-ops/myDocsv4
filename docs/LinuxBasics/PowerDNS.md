@@ -109,11 +109,11 @@ cd poweradmin
 
 前两个步骤直接无脑下一步就可以了，:three:第三步需要配置连接数据库，详细信息如下所示
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/powerdns/pdns-1.png)
+![](https://cdn.agou-ops.cn/blog-images/powerdns/pdns-1.png)
 
 :four:第四步，为 Poweradmin 创建一个受限用户，详细信息如下所示：
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/powerdns/pdns-2.png)
+![](https://cdn.agou-ops.cn/blog-images/powerdns/pdns-2.png)
 
 信息说明：
 
@@ -125,7 +125,7 @@ cd poweradmin
 
 :five: 第五步，Poweradmin会要求你在数据库表中创建一个新的受限数据库用户，它会提供你需要在MariaDB控制台输入的代码：
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/powerdns/pdns-3.png)
+![](https://cdn.agou-ops.cn/blog-images/powerdns/pdns-3.png)
 
 打开 mysql 客户端，输入以下内容：
 
@@ -168,7 +168,7 @@ rm -rf /var/www/html/poweradmin/install/
 
 现在，就可以直接通过浏览器访问 PowerAdmin 了，http://172.16.1.128/poweradmin/
 
-![](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/powerdns/pdns-4.png)
+![](https://cdn.agou-ops.cn/blog-images/powerdns/pdns-4.png)
 
 ## 参考链接
 

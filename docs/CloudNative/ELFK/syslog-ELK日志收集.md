@@ -53,7 +53,7 @@ output {
 
 在浏览器的`es`插件中的`browser`进行查看:
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/elk%20stack/syslog%2Belk.png)
+![](https://cdn.agou-ops.cn/blog-images/elk%20stack/syslog%2Belk.png)
 
 ### Kibana 状态
 

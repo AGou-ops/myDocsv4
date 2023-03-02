@@ -176,7 +176,7 @@ minikube dashboard
 
 启动完毕之后, 会自动打开浏览器并访问`Dashboard`.
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/minikube/minikube-dashboard.png)
+![](https://cdn.agou-ops.cn/blog-images/minikube/minikube-dashboard.png)
 
 ## 常用命令
 

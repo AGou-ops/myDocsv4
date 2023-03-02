@@ -308,7 +308,7 @@ slice[:]   // 从头切到尾，等价于复制整个 slice
 >
 >执行上面的代码后，我们有了两个切片，它们共享同一段底层数组，但通过不同的切片会看到底层数组的不同部分：
 >
->![img](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/952033-20190414120438985-1546140333.png)
+>![img](https://cdn.agou-ops.cn/others/952033-20190414120438985-1546140333.png)
 >
 >:information_source:截取新切片时的原则是 "左含右不含"。所以 newNum 是从 myNum 的 index=1 处开始截取，截取到 index=3 的前一个元素，也就是不包含 index=3 这个元素。所以，新的 newNum 是由 myNum 中的第2个元素、第3个元素组成的新的切片构，长度为 2，容量为 4。**切片 myNum 能够看到底层数组全部 5 个元素的容量，而 newNum 能看到的底层数组的容量只有 4 个元素。newNum 无法访问到底层数组的第一个元素。所以，对 newNum 来说，那个元素就是不存在的。**
 
@@ -335,7 +335,7 @@ newNum = append(newNum, 60)
 >
 >当这个 append 操作完成后，newSlice 拥有一个全新的底层数组，这个数组的容量是原来的两倍：
 >
->![img](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/952033-20190414120734540-387415802.png)
+>![img](https://cdn.agou-ops.cn/others/952033-20190414120734540-387415802.png)
 >
 >函数 append() 会智能地处理底层数组的容量增长。**在切片的容量小于 1000 个元素时，总是会成倍地增加容量。一旦元素个数超过 1000，容量的增长因子会设为 1.25，也就是会每次增加 25%的容量(随着语言的演化，这种增长算法可能会有所改变)。**
 
@@ -391,7 +391,7 @@ return slice
 }
 ```
 
-![image-20210818170823952](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/image-20210818170823952.png)
+![image-20210818170823952](https://cdn.agou-ops.cn/others/image-20210818170823952.png)
 
 ## map映射
 

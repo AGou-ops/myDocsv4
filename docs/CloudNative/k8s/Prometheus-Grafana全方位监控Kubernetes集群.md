@@ -88,11 +88,11 @@ Export list for nfs:
 
 **本人的yaml文件**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106165528931.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106165528931.png)
 
 **官方yaml文件**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106165536705.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106165536705.png)
 
 **文件说明**
 
@@ -357,7 +357,7 @@ service/prometheus created
 [root@k8s-master ~/k8s/prometheus]\# kubectl get pod,svc,pv,pvc -n prometheus -o wide
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106171837694.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106171837694.png)
 
 主要访问30387端口看到prometheus
 
@@ -365,12 +365,12 @@ service/prometheus created
 
 使用任意node节点的ip加30387端口即可访问：http://192.168.16.106:30387/
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106171846551.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106171846551.png)
 
 查看监控主机
 
 可以看到已经有很多了，这些配置都是configmap资源中配置的
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106171854253.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106171854253.png)
 
 ### 3.8.prometheus配置文件解释
 
@@ -424,7 +424,7 @@ scrape_configs:
 
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106171909965.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106171909965.png)
 
 **k8s的node节点自动发现**
 
@@ -447,7 +447,7 @@ scrape_configs:
 
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106171919584.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106171919584.png)
 
 **发现endpoint的资源**
 
@@ -492,7 +492,7 @@ scrape_configs:
 
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106171929948.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106171929948.png)
 
 **发现services**
 
@@ -568,11 +568,11 @@ scrape_configs:
 
 metrics页面访问如下也没关系，metrics貌似只能集群内部进行访问
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106171942988.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106171942988.png)
 
 只要能在prometheus搜索到container数据就可以
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106171951255.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106171951255.png)
 
 ## 4.在k8s中部署grafana
 
@@ -715,13 +715,13 @@ service/grafana-ui   NodePort   10.96.170.142   <none>        3000:32040/TCP   8
 
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172010434.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172010434.png)
 
 ### 4.6.登陆grafana
 
 访问：集群任意ip和32040端口即可访问
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172018940.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172018940.png)
 
 ### 4.7.导入k8s资源监控pod资源模板
 
@@ -731,11 +731,11 @@ service/grafana-ui   NodePort   10.96.170.142   <none>        3000:32040/TCP   8
 - 资源状态监控：6417
 - node监控：9276
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172028210.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172028210.png)
 
 导入成功
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172037255.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172037255.png)
 
 ### 4.8.解决模板表达式问题无法展现所有pod
 
@@ -743,21 +743,21 @@ service/grafana-ui   NodePort   10.96.170.142   <none>        3000:32040/TCP   8
 
 模板中的图形关于pod和docker的全部有问题，仅单单显示一个pod
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172046186.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172046186.png)
 
 #### 4.8.2.问题解决
 
 修改他们的表达式就可以了，将pod_name修改为pod
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172056945.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172056945.png)
 
 修改为立马显示出所有pod，所有关于pod和docker的都是这么改
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172106157.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172106157.png)
 
 最终展示效果
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172114765.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172114765.png)
 
 ## 5.监控k8s node节点
 
@@ -814,7 +814,7 @@ fi
 
 在这里下载脚本用就行了
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172136934.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172136934.png)
 
 ```sh
 [root@k8s-node1 ~]\# wget http://192.168.16.106:888/install_node_exportes.sh
@@ -836,7 +836,7 @@ tcp6       0      0 :::9100                 :::*                    LISTEN      
         - 192.168.16.107:9100
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172150508.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172150508.png)
 
 **更新配置**
 
@@ -849,19 +849,19 @@ configmap/prometheus-config created
 
 成功添加node监控
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172200609.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172200609.png)
 
 ### 5.4.导入k8s node主机监控模板
 
 node监控：9276
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172210569.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172210569.png)
 
 **填写信息**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172219328.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172219328.png)
 **查看图形**
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172235454.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172235454.png)
 
 ## 6.k8s使用kube-state-metrics-监控资源状态
 
@@ -881,7 +881,7 @@ deployment资源里面结合了configmap资源
 [root@k8s-master ~/k8s/prometheus3]\# kubectl create -f kube-state-metrics-deployment.yaml 
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172259875.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172259875.png)
 
 ### 6.3.创建service资源
 
@@ -896,23 +896,23 @@ deployment资源里面结合了configmap资源
 
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172316131.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172316131.png)
 
 ### 6.5.在prometheus查看是否获取监控指标
 
 安装完kube-state-metrics之后，直接就可以在prometheus上查询监控指标，都是以kube开头的
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172326163.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172326163.png)
 
 ### 6.6.导入k8s 资源状态模板
 
 资源状态监控：6417
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/2021010617233747.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/2021010617233747.png)
 
 查看图形，也是有很多监控不到
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172345276.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172345276.png)
 
 ## 7.在k8s中部署alertmanager实现告警系统
 
@@ -1016,17 +1016,17 @@ service/alertmanager created
 [root@k8s-master ~/k8s/prometheus3]\# kubectl get all,pv,pvc,cm -n alertmanager
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172401946.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172401946.png)
 
 ### 7.6.访问alertmanager
 
 任意node节点+31831端口即可
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172410897.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172410897.png)
 
 配置文件已经支持微信报警
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172419513.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172419513.png)
 
 ## 8.配置alertmanager实现k8s告警系统
 
@@ -1153,7 +1153,7 @@ persistentvolume/pv-prometheus-rules created
 
 ```
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172451817.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172451817.png)
 
 ### 8.4.更新prometheus-statefulset资源
 
@@ -1181,7 +1181,7 @@ configmap/prometheus-config configured
 
 已经成功填加rules告警规则
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172502911.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172502911.png)
 
 ### 8.6.模拟node主机宕机并查看微信告警内容
 
@@ -1194,17 +1194,17 @@ configmap/prometheus-config configured
 
 **告警已经产生**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172537744.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172537744.png)
 
 **告警消息已经发送**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172545238.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172545238.png)
 
 **查看告警内容**
 
 已经成功收到告警，k8s监控系列篇到此结束
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/20210106172554537.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/20210106172554537.png)
 
 > 该文章为转载内容，仅做备份私人学习使用，原文：https://jiangxl.blog.csdn.net/article/details/112283085
 

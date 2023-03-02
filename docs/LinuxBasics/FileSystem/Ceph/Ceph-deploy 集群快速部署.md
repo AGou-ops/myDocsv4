@@ -17,7 +17,7 @@
 - mon，monitor节点，即是Ceph的监视管理节点，承担Ceph集群重要的管理任务，一般需要3或5个节点
 - osd，OSD即Object Storage Daemon，实际负责数据存储的节点
 
-![Ceph集群部署架构](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Ceph%E9%9B%86%E7%BE%A4%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/1%20-%201620.jpg)
+![Ceph集群部署架构](https://cdn.agou-ops.cn/blog-images/Ceph%E9%9B%86%E7%BE%A4%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/1%20-%201620.jpg)
 
 安装环境以三个节点的方式来完成Ceph集群的部署，如下是各个集群安装部署的信息：
 
@@ -34,7 +34,7 @@
 
 ## 1.2 前提环境准备
 
-![Ceph环境准备](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Ceph%E9%9B%86%E7%BE%A4%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/2%20-%201620.jpg)
+![Ceph环境准备](https://cdn.agou-ops.cn/blog-images/Ceph%E9%9B%86%E7%BE%A4%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/2%20-%201620.jpg)
 
 安装Ceph之前需要将环境提前部署好，部署内容参考上图内容，官方安装时推荐创建一个新的用户来实现安装部署，[官方参考文档](https://docs.ceph.com/docs/master/start/quick-start-preflight/)，本文直接以root的身份实现集群的安装。**备注：以下操作除了ssh无密码登陆之外，其他操作均需要在所有节点上执行。**
 
@@ -66,7 +66,7 @@
 
 3、设置ssh无密码登陆，需要需要在node-1上生成key，然后将公钥拷贝到其他节点(包括node-1节点)，如下图
 
-![设置无密码登陆](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Ceph%E9%9B%86%E7%BE%A4%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/3%20-%202u7p1t82sz.gif)
+![设置无密码登陆](https://cdn.agou-ops.cn/blog-images/Ceph%E9%9B%86%E7%BE%A4%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/3%20-%202u7p1t82sz.gif)
 
 4、关闭Selinux默认已关闭
 
@@ -206,7 +206,7 @@ auth_client_required = cephx
 
 3、初始化monitor节点,执行`ceph-deploy mon create-initial`做初始化
 
-![ceph初始化](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Ceph%E9%9B%86%E7%BE%A4%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/4%20-%203knafaaaz5.gif)
+![ceph初始化](https://cdn.agou-ops.cn/blog-images/Ceph%E9%9B%86%E7%BE%A4%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/4%20-%203knafaaaz5.gif)
 
 初始化完毕后会生成对应的keyring文件，用于ceph认证：
 
@@ -220,7 +220,7 @@ auth_client_required = cephx
 
 4、将认证密钥拷贝到其他节点，便于ceph命令行可以通过keyring和ceph集群进行交互,`ceph-deploy admin node-1 node-2 node-3`
 
-![Ceph拷贝管理密钥](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Ceph%E9%9B%86%E7%BE%A4%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/5%20-%20bdjm18awgi.gif)
+![Ceph拷贝管理密钥](https://cdn.agou-ops.cn/blog-images/Ceph%E9%9B%86%E7%BE%A4%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/5%20-%20bdjm18awgi.gif)
 
 此时，Ceph集群已经建立起来，包含一个monitor节点，通过ceph -s可以查看当前ceph集群的状态，由于此时并没有任何的OSD节点，因此无法往集群中写数据等操作,如下是ceph -s查看的输出结果
 
@@ -244,7 +244,7 @@ auth_client_required = cephx
 
 5、集群中目前还没有OSD节点，因此没法存储数据，接下来开始往集群中添加OSD节点，每个节点上都有一块50G的vdb磁盘，将其加入到集群中作为OSD节点,如`ceph-deploy osd create node-1 --data /dev/vdb`
 
-![ceph添加osd节点](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Ceph%E9%9B%86%E7%BE%A4%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/6%20-%206xvae2muoj.gif)
+![ceph添加osd节点](https://cdn.agou-ops.cn/blog-images/Ceph%E9%9B%86%E7%BE%A4%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/6%20-%206xvae2muoj.gif)
 
 如上已将node-1的vdb添加到ceph集群中，ceph -s可以看到当前有一个osd加入到集群中，执行相同的方法将node-2和node-3上的磁盘添加到集群中
 
@@ -288,7 +288,7 @@ ID CLASS WEIGHT  TYPE NAME       STATUS REWEIGHT PRI-AFF
 
 6、此时Ceph的health状态为HEALTH_WARN告警状态，提示信息为“no active mgr”，因此需要部署一个mgr节点，manager节点在luminous之后的版本才可以部署（本环境部署的是M版本，因此可以支持），将mgr部署到node-1节点，执行`ceph-deploy mgr create node-1`
 
-![Ceph添加mgr节点](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/Ceph%E9%9B%86%E7%BE%A4%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/7%20-%20vka5irzwpc.gif)
+![Ceph添加mgr节点](https://cdn.agou-ops.cn/blog-images/Ceph%E9%9B%86%E7%BE%A4%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/7%20-%20vka5irzwpc.gif)
 
 至此，Ceph集群已经部署完毕。通过ceph-deploy工具进行部署完成Ceph集群的自动化部署，后续添加monitor节点，osd节点，mgr节点也会很方便。
 

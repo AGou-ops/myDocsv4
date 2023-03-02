@@ -29,7 +29,7 @@ Varnish是一款高性能的开源HTTP加速器，具有**反向代理**，**缓
 
 ### varnish官方架构图
 
-![varnish-arch](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/varnish/architecture.svg)
+![varnish-arch](https://cdn.agou-ops.cn/blog-images/varnish/architecture.svg)
 
 Varnish主要运行2个进程，`Management`进程和`Child`进程
 
@@ -45,7 +45,7 @@ Varnish主要运行2个进程，`Management`进程和`Child`进程
 
 ### varnish工作流程
 
-![varnish02](http://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/varnish/varnish-02.png)
+![varnish02](https://cdn.agou-ops.cn/blog-images/varnish/varnish-02.png)
 
 * `vcl_recv函数`：在Varnish完成对请求报文的解码为基本数据结构后第一个要执行的子例程，它通常有四个主要用途：1.修改客户端数据以减少缓存对象差异性；比如删除URL中的www.等字符；2.基于客户端数据选用缓存策略；比如仅缓存特定的URL请求、不缓存POST请求等；3.为某web应用程序执行URL重写规则； 4.挑选合适的后端Web服务器；
 * `vcl_hash函数`：默认VCL将主机名或IP地址以及请求的URL进行hash

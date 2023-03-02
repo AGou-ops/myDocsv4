@@ -1,6 +1,6 @@
 # Kafka + ELFK分布式日志收集
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/blog-images/elk%20stack/log_collect.png )
+![](https://cdn.agou-ops.cn/blog-images/elk%20stack/log_collect.png )
 
 ***Filebeat --> Kafka --> Logstash --> ES Cluster --> Kibana/Grafana***
 

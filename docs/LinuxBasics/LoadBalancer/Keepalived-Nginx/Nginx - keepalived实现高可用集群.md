@@ -1,6 +1,6 @@
 ## 1.图解Nginx七层与四层
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDk1MzY1OA==,size_16,color_FFFFFF,t_70.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDk1MzY1OA==,size_16,color_FFFFFF,t_70.png)
 
 大型企业架构一般是用户先访问到四层负载均衡，在由四层负载均衡转发至七层服务在均衡，七层负载均衡再转发至后端服务器，四层负载均衡只起到一个分流的作用，根据用户访问的端口，比如说80端口就会跳转至七层的对应的集群，两台四层负载均衡配置是一模一样的，形成高可用，七层的配置也是一模一样的，当有1500个请求需要响应时，四层负载均衡就会平均将1500个请求分给急群中的lb，每个lb响应500个请求，减轻单点的压力。
 
@@ -166,7 +166,7 @@ keepalived-backup
 
 **虚拟IP漂移时会产生一个丢包现象，master或者slave将进行抢占**
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDk1MzY1OA==,size_16,color_FFFFFF,t_70-20220615154102444.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDk1MzY1OA==,size_16,color_FFFFFF,t_70-20220615154102444.png)
 下面开始验证，具体思路：
 
  1.主节点查看是否存在虚拟ip
@@ -376,11 +376,11 @@ keepalived-backup
 
 ### 8.6.页面访问
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDk1MzY1OA==,size_16,color_FFFFFF,t_70-20220615154102658.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDk1MzY1OA==,size_16,color_FFFFFF,t_70-20220615154102658.png)
 
 ### 8.7.抓包验证
 
-![在这里插入图片描述](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDk1MzY1OA==,size_16,color_FFFFFF,t_70-20220615154102932.png)
+![在这里插入图片描述](https://cdn.agou-ops.cn/others/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDk1MzY1OA==,size_16,color_FFFFFF,t_70-20220615154102932.png)
 
 
 

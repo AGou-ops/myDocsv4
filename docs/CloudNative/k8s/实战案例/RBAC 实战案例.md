@@ -65,7 +65,7 @@ Context "knowman@kubernetes" created.
 [root@k8s-master /etc/kubernetes/pki]\# kubectl config view
 ```
 
-![Kubernetes集群RBAC授权案例（一）通过用户账号的方式分配单独Namespace的权限（四十）_用户账号](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=-20220616085930486.png)
+![Kubernetes集群RBAC授权案例（一）通过用户账号的方式分配单独Namespace的权限（四十）_用户账号](https://cdn.agou-ops.cn/others/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=-20220616085930486.png)
 
 ```sh
 5）切换到knowman用户
@@ -114,7 +114,7 @@ knowman-clusterrole   2021-04-20T06:26:20Z
 [root@k8s-master ~/k8s_1.19_yaml/rbac]\# kubectl describe clusterrole knowman-clusterrole
 ```
 
-![Kubernetes集群RBAC授权案例（一）通过用户账号的方式分配单独Namespace的权限（四十）_docker_02](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=-20220616085930519.png)
+![Kubernetes集群RBAC授权案例（一）通过用户账号的方式分配单独Namespace的权限（四十）_docker_02](https://cdn.agou-ops.cn/others/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=-20220616085930519.png)
 
 ## 4.创建RoleBinding资源将用户和角色绑定
 
@@ -151,7 +151,7 @@ knowman-rolebinding   ClusterRole/knowman-clusterrole   17s
 [root@k8s-master ~/k8s_1.19_yaml/rbac]\# kubectl describe rolebinding knowman-rolebinding -n know-system
 ```
 
-![Kubernetes集群RBAC授权案例（一）通过用户账号的方式分配单独Namespace的权限（四十）_nginx_03](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=-20220616085930655.png)
+![Kubernetes集群RBAC授权案例（一）通过用户账号的方式分配单独Namespace的权限（四十）_nginx_03](https://cdn.agou-ops.cn/others/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=-20220616085930655.png)
 
 ## 5.切换knowman用户查看权限
 
@@ -178,7 +178,7 @@ Error from server (Forbidden): pods "deploy-nginx-5cfd6fd7bd-79z4t" is forbidden
 
 除了deployment、pod资源之前无权操作其他资源
 
-![Kubernetes集群RBAC授权案例（一）通过用户账号的方式分配单独Namespace的权限（四十）_nginx_04](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=-20220616085930822.png)
+![Kubernetes集群RBAC授权案例（一）通过用户账号的方式分配单独Namespace的权限（四十）_nginx_04](https://cdn.agou-ops.cn/others/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=-20220616085930822.png)
 
 
 
@@ -315,7 +315,7 @@ kubectl config set-cluster kubernetes \
 ```
 
 当执行了第一步设置集群信息后，查看kubeconfig的文件内容，会发现文件里面多了根证书ca的文件内容以及集群apiserver的地址
-![Kubernetes集群RBAC授权案例（二）通过kubeconfig授权文件实现特定资源的权限分配（四十一）_linux](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=-20220616090418303.png)
+![Kubernetes集群RBAC授权案例（二）通过kubeconfig授权文件实现特定资源的权限分配（四十一）_linux](https://cdn.agou-ops.cn/others/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=-20220616090418303.png)
 
 **2.设置客户端认证：指定客户端证书文件路径和私钥文件路径**
 
@@ -333,7 +333,7 @@ kubectl config set-credentials jiangxl \
 ```
 
 当第二步设置客户端证书认证完成后，kubeconfig文件就会增加客户端证书文件的内容
-![Kubernetes集群RBAC授权案例（二）通过kubeconfig授权文件实现特定资源的权限分配（四十一）_客户端_02](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=-20220616090418664.png)
+![Kubernetes集群RBAC授权案例（二）通过kubeconfig授权文件实现特定资源的权限分配（四十一）_客户端_02](https://cdn.agou-ops.cn/others/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=-20220616090418664.png)
 
 **3.设置默认上下文：指定用户名是什么**
 
@@ -345,7 +345,7 @@ kubectl config set-context kubernetes \
 ```
 
 第三步执行完成后，kubeconfig文件里面会增加用户信息配置，rbac授权也是将这个用户和某个role进行绑定
-![Kubernetes集群RBAC授权案例（二）通过kubeconfig授权文件实现特定资源的权限分配（四十一）_容器_03](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=-20220616090418987.png)
+![Kubernetes集群RBAC授权案例（二）通过kubeconfig授权文件实现特定资源的权限分配（四十一）_容器_03](https://cdn.agou-ops.cn/others/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=-20220616090418987.png)
 
 ## 5.执行kubectl命令时指定授权文件
 
