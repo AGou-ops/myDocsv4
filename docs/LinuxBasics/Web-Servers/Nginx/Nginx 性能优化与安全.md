@@ -61,6 +61,53 @@ net.ipv4.tcp_keepalive_time = 30               #默认值7200 当启用keepalive
 > - 文件句柄，Linux一切皆文件，文件句柄可以理解为就是一个索引，文件句柄会随着我们进程的调用频繁增加，系统默认文件句柄是有限制的，不能让一个进程无限的调用，所以我们需要限制每个 进程和每个服务使用多大的文件句柄，文件句柄也是必须要调整的优化参数。
 > - 在高并发短连接的TCP服务器上，当服务器处理完请求后立刻主动正常关闭连接。这个场景下会出现大量socket处于TIME_WAIT状态。如果客户端的并发量持续很高，此时部分客户端就会显示连接不上。 我来解释下这个场景。主动正常关闭TCP连接，都会出现TIMEWAIT。
 
+CPU亲和配置：
+
+```bash
+# 比如八核心的CPU，可以这样配置
+worker_processes 8;
+worker_cpu_affinity 00000001 00000010 00000100 00001000 00010000 00100000 01000000 10000000;
+```
+
+> cpu的亲和能够使nginx对于不同的work工作进程绑定到不同的cpu上面去。就能够减少在work间不断切换cpu，把进程通常不会在处理器之间频繁迁移，进程迁移的频率小，来减少性能损耗。
+
+优化事件处理模型：
+
+```bash
+events {
+    worker_connections  10240;    //
+    use epoll;
+}
+```
+
+> nginx的连接处理机制在于不同的操作系统会采用不同的I/O模型，Linux下，nginx使用epoll的I/O多路复用模型，在freebsd使用kqueue的IO多路复用模型，在solaris使用/dev/pool方式的IO多路复用模型，在windows使用的icop等等。要根据系统类型不同选择不同的事务处理模型，我们使用的是Centos，因此将nginx的事件处理模型调整为epoll模型。
+>
+> :information_source:说明：在不指定事件处理模型时，nginx默认会自动的选择最佳的事件处理模型服务。
+
+设置work_connections 连接数：
+
+```bash
+ worker_connections  10240;
+```
+
+会话保持时间优化：
+
+```bash
+keepalive_timeout  60;
+```
+
+proxy超时设置：
+
+```bash
+proxy_connect_timeout 90;
+proxy_send_timeout  90;
+proxy_read_timeout  4k;
+proxy_buffers 4 32k;
+proxy_busy_buffers_size 64k;
+```
+
+
+
 ## 作为代理服务器优化
 
 通常nginx作为代理服务，负责转发用户的请求，那么在转发的过程中建议开启HTTP长连接，用于减少握手次数，降低服务器损耗。

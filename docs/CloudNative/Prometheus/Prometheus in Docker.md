@@ -20,10 +20,18 @@ docker run -d -p 9100:9100 \
   -v "/sys:/home/docker/sys:ro" \
   -v "/:/home/docker/rootfs:ro" \
   --net="host" \
+  # --name="node_exporter"
   prom/node-exporter
 ```
 
 测试`node-exporter`是否成功启动，http://172.16.1.132:9100/metrics
+
+其他：
+
+```bash
+# 使用nginx的exporter
+$ docker run -p 9113:9113 nginx/nginx-prometheus-exporter -nginx.scrape-uri=http://<nginx>:8080/stub_status
+```
 
 ### 启动`prometheus`：
 
@@ -76,6 +84,32 @@ docker run -d \
   -v /data/grafana-storage:/var/lib/grafana \
   grafana/grafana
 ```
+
+> :warning:注意：
+>
+> grafana v5.1之后的版本权限已经发生了变化，具体如下：
+>
+> https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/#migrate-to-v51-or-later
+>
+> 所以应该指定userid：
+>
+> ```bash
+> mkdir /data/grafana-storage -pv # creates a folder for your data
+> ID=$(id -u) # saves your user id in the ID variable
+> 
+> # starts grafana with your user id and using the data folder
+> docker run -d --user $ID --volume "/data/grafana-storage:/var/lib/grafana" -p 3000:3000   grafana/grafana
+> ```
+>
+> 或者直接使用持久卷：
+>
+> ```bash
+> # create a persistent volume for your data in /var/lib/grafana (database and plugins)
+> docker volume create grafana-storage
+> 
+> # start grafana
+> docker run -d -p 3000:3000 --name=grafana -v grafana-storage:/var/lib/grafana   grafana/grafana
+> ```
 
 测试容器运行状态，浏览器访问http://172.16.1.132:3000
 

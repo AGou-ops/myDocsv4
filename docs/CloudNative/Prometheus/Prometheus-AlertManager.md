@@ -102,7 +102,7 @@ docker run -d --name prometheus -p 9090:9090 -v /home/prom/prometheus.yml:/etc/p
 docker run --name alertmanager -d -p 9093:9093 prom/alertmanager
 ```
 
-打开浏览器访问 http://lcoalhost:9093 进行测试，这里没有报警规则，所有没有内容呈现，
+打开浏览器访问 http://localhost:9093 进行测试，这里没有报警规则，所有没有内容呈现，
 
 编辑 AlertManager 的配置文件`alertmanager.yml`：
 
@@ -142,7 +142,7 @@ docker run -d --name alertmanager -p 9093:9093 -v /home/prom/alertmanager.yml:/e
 
 ## 配置  Prom 的报警规则
 
-在 Prometheus 配置 AlertManager 服务地址以及告警规则，新建报警规则文件`/home/prom/rules/ test_alert.rules` 如下：
+在 Prometheus 配置 AlertManager 服务地址以及告警规则，新建报警规则文件`/home/prom/rules/test_alert.rules` 如下：
 
 ```bash
 groups:
