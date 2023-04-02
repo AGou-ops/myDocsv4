@@ -197,6 +197,18 @@ Kubernetes还提供了Service抽象，用于在集群内提供一致的访问方
 
 Kubernetes还支持使用Ingress控制器对外部访问进行路由，从而可以控制对集群内资源的访问。通过Kubernetes的网络模型，您可以轻松构建可扩展、高可用的分布式系统。
 
+
+
+Kubernetes（简称k8s）的网络模型主要分为两部分，分别是Pod之间的通信和Pod与Service之间的通信。
+
+
+
+Pod之间的通信是通过在每个节点上创建一个名为kube-proxy的代理程序，它会监视API服务器来获取新的端点信息，并在本地的iptables规则中添加或删除相关规则。每个Pod都有自己的IP地址，它通过kube-proxy代理程序访问其他Pod。
+
+
+
+Pod与Service之间的通信是通过集群中的Service对象来实现的。Service对象会封装一组Pod，然后分配一个虚拟IP地址，其它的Pod可以通过这个虚拟IP地址和端口号来访问这组Pod。当一个Service对象被创建或更新后，kube-proxy代理程序会更新本地的iptables规则，以便将请求路由到正确的Pod。
+
 ## 如何解决 Kubernetes 集群中的故障域问题？
 
 一种方法是在每个节点上启用容器故障探测器，在集群内部分布式系统中使用心跳消息来监测每个节点的健康状况。另一种方法是在集群范围内使用节点监控器，监测每个节点的状态，并在发生故障时自动触发重新分配容器的操作。此外，使用容器容量管理工具，如 Kubernetes 自带的 Horizontal Pod Autoscaler（HPA），也可以帮助解决故障域问题。
