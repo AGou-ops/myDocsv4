@@ -13,6 +13,50 @@ wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 java -jar jenkins.war
 ```
 
+添加Jenkins成服务项：
+
+```bash
+$ cat /usr/lib/systemd/system/jenkins.service
+[Unit]
+Description=Jenkins Continuous Integration Server
+Requires=network.target
+After=network.target
+
+[Service]
+Type=notify
+NotifyAccess=main
+ExecStart=/usr/local/jdk-17.0.6/bin/java -jar /usr/local/jenkins/jenkins.jar --httpPort=8080
+Restart=on-failure
+SuccessExitStatus=143
+
+# /etc/systemd/system/jenkins.service.d/override.conf
+[Service]
+Environment="JAVA_OPTS=-Djava.awt.headless=true"
+```
+
+>如果启动过程中报以下错误：
+>
+>```bash
+>java.lang.NullPointerException: Cannot load from short array because "sun.awt.FontConfiguration.head" is null
+>	at java.desktop/sun.awt.FontConfiguration.getVersion(FontConfiguration.java:1262)
+>	at java.desktop/sun.awt.FontConfiguration.readFontConfigFile(FontConfiguration.java:224)
+>	at java.desktop/sun.awt.FontConfiguration.init(FontConfiguration.java:106)
+>	at java.desktop/sun.awt.X11FontManager.createFontConfiguration(X11FontManager.java:706)
+>	at java.desktop/sun.font.SunFontManager$2.run(SunFontManager.java:358)
+>	at java.desktop/sun.font.SunFontManager$2.run(SunFontManager.java:315)
+>	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+>	at java.desktop/sun.font.SunFontManager.<init>(SunFontManager.java:315)
+>	at java.desktop/sun.awt.FcFontManager.<init>(FcFontManager.java:35)
+>	at java.desktop/sun.awt.X11FontManager.<init>(X11FontManager.java:56)
+>	...
+>```
+>
+>解决方法：尝试安装`fontconfig`包。
+>
+>```bash
+>dnf install fontconfig
+>```
+
 通过`yum`仓库或者直接下载`rpm`包安装:
 
 ```bash
@@ -78,7 +122,43 @@ docker pull jenkins
 docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v /var/jenkins_home jenkins
 ```
 
-# 其他
+规范安装步骤：
+
+```bash
+# 创建名为docker的用户组
+$ sudo groupadd docker
+# 把当前用户加入到这个用户组中
+$ sudo usermod -aG docker $USER
+
+# 创建jenkins用户并添加同名组、创建用户目录,默认shell为bash
+$ sudo useradd -mU jenkins -s /bin/bash 
+$ sudo passwd jenkins #重置密码
+$ su jenkins #使用jenkins用户登录
+$ cd ~ #进入/home/jenkins目录
+
+# docker-compose.yml 文件内容如下：
+version: '3'
+
+services:
+  jenkins-compose:
+    # 注意镜像名称，lts表示长期支持版
+    image: jenkins/jenkins:lts
+    privileged: true # 解决权限问题
+    restart: always 
+    ports:
+     - "8088:8080"
+     - "50000:50000"
+    environment:
+     - JAVA_OPTS=-Duser.timezone=Asia/Shanghai
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+     - /usr/bin/docker:/usr/bin/docker
+     - /home/ubuntu/jenkins-compose:/var/jenkins_home
+
+$ docker-compose up -d jenkins-compose
+```
+
+## 其他
 
 ### 切换语言为简体中文
 
@@ -112,6 +192,76 @@ http://xx.xx.xx.xx:8080/restart 	# xx.xx.xx.xx 为服务器IP
 > **解决方法:**
 >
 > 进入` Manage Jenkins`, 找到`Install as Windows service`, 然后安装成为服务即可.
+
+### 修改默认时区
+
+在【系统管理】-【脚本命令行】里运行
+
+```bash
+System.setProperty('org.apache.commons.jelly.tags.fmt.timeZone', 'Asia/Shanghai')
+```
+
+## nginx反向代理
+
+```nginx	
+server {
+    listen      80;
+    listen      [::]:80;
+    server_name jenkins.localmac.com;
+
+    # security
+    # include     nginxconfig.io/security.conf;
+
+    # logging
+    access_log  /var/log/nginx/access.log combined buffer=512k flush=1m;
+    error_log   /var/log/nginx/error.log warn;
+      # pass through headers from Jenkins that Nginx considers invalid
+  ignore_invalid_headers off;
+
+    # reverse proxy
+    location / {
+        sendfile off;
+        proxy_pass            http://192.168.0.104:8090;
+        proxy_redirect     default;
+        proxy_http_version 1.1;
+
+        # Required for Jenkins websocket agents
+        proxy_set_header   Connection        $connection_upgrade;
+        proxy_set_header   Upgrade           $http_upgrade;
+
+        proxy_set_header   Host              $host;
+        proxy_set_header   X-Real-IP         $remote_addr;
+        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+        proxy_max_temp_file_size 0;
+
+        #this is the maximum upload size
+        client_max_body_size       10m;
+        client_body_buffer_size    128k;
+
+        proxy_connect_timeout      90;
+        proxy_send_timeout         90;
+        proxy_read_timeout         90;
+        proxy_buffering            off;
+        proxy_request_buffering    off; # Required for HTTP CLI commands
+        proxy_set_header Connection ""; # Clear for keepalive
+    }
+
+    # additional config
+    include nginxconfig.io/general.conf;
+}
+
+# subdomains redirect
+server {
+    listen      80;
+    listen      [::]:80;
+    server_name *.jenkins.localrokcy.com;
+    return      301 http://jenkins.localrocky.com$request_uri;
+}
+
+```
+
+
 
 ## 参考链接
 

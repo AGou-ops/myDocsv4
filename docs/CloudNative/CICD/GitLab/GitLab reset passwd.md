@@ -11,7 +11,7 @@
 2. Ruby on Rails console
 
    ```bash
-   $ gitlab-rails console production
+   $ gitlab-rails console -e production
    ```
 
 3. 查找`root`用户
@@ -29,8 +29,8 @@
 4. 重置密码（要求不少于8位）
 
    ```ruby
-   irb(main):006:0> user.password = 'secret_pass'
-   irb(main):006:0> user.password_confirmation = 'secret_pass'
+   irb(main):006:0> user.password = 'suofeiya'
+   irb(main):006:0> user.password_confirmation = 'suofeiya'
    ```
 
 5. 保存更改

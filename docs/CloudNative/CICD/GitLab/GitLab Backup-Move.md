@@ -73,3 +73,7 @@ gitlab-rake gitlab:backup:restore BACKUP=1543846302_2020_7_23
 途中, 输入两次`yes`即可完成数据迁移.
 
 5. 最后重启`GitLab`: `gitlab-ctl restart`
+
+
+
+另：https://blog.51cto.com/jiangxl/4637789

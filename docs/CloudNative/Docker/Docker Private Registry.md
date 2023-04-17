@@ -1,4 +1,4 @@
-# Docker Private Registry  
+# Docker Private Registry
 
 ## 一、Docker私有仓库
 
@@ -83,9 +83,76 @@ REPOSITORY             TAG                 IMAGE ID            CREATED          
 10.0.0.12:5000/nginx   v5                  e74b49bcb92b        23 hours ago        16MB
 ```
 
-
-
 ### VMware harbor
+
+#### 使用`bitnami`的harbor镜像
+
+```bash
+curl -LO https://raw.githubusercontent.com/bitnami/containers/main/bitnami/harbor-portal/docker-compose.yml
+curl -L https://github.com/bitnami/containers/archive/main.tar.gz | tar xz --strip=2 containers-main/bitnami/harbor-portal && cp -RL harbor-portal/config . &&  tp harbor-portal
+docker-compose up
+```
+
+:information_source:修改`docker-compose.yml`文件：
+
+```yaml
+# 如果要使用外部域名或者反向代理的话，需要修改下面这个变量
+EXT_ENDPOINT
+```
+
+:warning:使用nginx进行反向代理的请求头设置：
+
+```nginx	
+server
+{
+	listen 80;
+	listen [::]:80;
+	listen 443 ssl http2;
+	listen [::]:443 ssl http2;
+	server_name harbor.localmac.com;
+
+	client_max_body_size 5G;
+
+
+	ssl_certificate /etc/nginx/certs/harbor.localmac.com.crt;
+	ssl_certificate_key /etc/nginx/certs/harbor.localmac.com.key;
+	ssl_client_certificate /etc/nginx/certs/ca.crt;
+
+	# security
+	# include     nginxconfig.io/security.conf;
+
+	# logging
+	access_log /var/log/nginx/access.log combined buffer=512k flush=1m;
+	error_log /var/log/nginx/error.log warn;
+	# pass through headers from harbor that Nginx considers invalid
+	ignore_invalid_headers off;
+
+	# reverse proxy
+	location /
+	{
+		proxy_pass http://192.168.0.104:8888;
+		proxy_set_header Host $host:$server_port;
+		proxy_set_header X-Forwarded-For $remote_addr;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-Proto $scheme;
+		proxy_redirect http:// $scheme://;
+	}
+
+	# additional config
+	include nginxconfig.io/general.conf;
+}
+
+# subdomains redirect
+server
+{
+	listen 80;
+	listen [::]:80;
+	server_name *.harbor.localmac.com;
+	return 301 http://harbor.localmac.com$request_uri;
+}
+```
+
+#### 以下为使用官方镜像的步骤：
 
  1. harbor 托管在[ GitHub ](https://github.com/goharbor/harbor)上，页面搜索" Installation & Configuration Guide "可以查看安装步骤。我们[下载 harbor ](https://github.com/goharbor/harbor/releases)压缩包，并解压。
 

@@ -1,5 +1,9 @@
 # pipeline - Jenkinsfile
 
+pipeline基本结构，其中黑框为必填选项：
+
+<img src="https://agou-images.oss-cn-qingdao.aliyuncs.com/others/1240.png" alt="image.png" style="zoom:33%;" />
+
 从一个简单的示例开始:
 
 ```bash
@@ -13,6 +17,16 @@ pipeline {
         }
     }
 }
+```
+
+## 关键字
+
+https://www.jenkins.io/zh/doc/book/pipeline/syntax/
+
+- agent:
+
+```bash
+
 ```
 
 ## 常用选项说明
@@ -40,4 +54,5 @@ pipeline {
 
 - groovy documentation: http://groovy-lang.org/semantics.html
 - pipeline syntax: https://www.jenkins.io/zh/doc/book/pipeline/syntax/
+- Jenkins 最佳实践：https://github.com/jenkinsci/pipeline-examples/blob/master/docs/BEST_PRACTICES.md
 

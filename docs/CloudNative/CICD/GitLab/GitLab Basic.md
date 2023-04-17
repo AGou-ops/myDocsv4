@@ -55,11 +55,44 @@ gitlab-ctl reconfigure
 
 :warning:默认用户名为`root`, 密码首次使用`GitLab`时会提示设置.
 
+默认密码：
+
+```bash
+ podman exec -ti gitlab_local_arm grep "Password:" /etc/gitlab/initial_root_password
+```
+
 > GitLab EE 与 CE 版本比较：https://about.gitlab.com/features/#compare
 
 ## Installing GitLab with Docker
 
 GitLab 仓库镜像：https://hub.docker.com/r/gitlab/gitlab-ce/
+
+ARM架构的镜像推荐使用：https://github.com/zengxs/gitlab-docker
+
+```bash
+$ cat gitlab.rb
+external_url 'http://git.localmac.com'
+
+gitlab_rails['gitlab_ssh_host'] = 'git.localmac.com'
+gitlab_rails['gitlab_shell_ssh_port'] = 2222
+
+$ docker run \
+ -itd  \
+ -p 9980:80 \
+ -p 2222:22 \
+ -v /Users/agou-ops/workspace/podman_workspace/gitlab:/etc/gitlab  \
+ --restart always \
+ --privileged=true \
+ --name gitlab \
+    zengxs/gitlab:ce
+```
+
+haproxy反向代理：
+
+```bash
+```
+
+
 
 ## 配置 HTTPS 证书
 
@@ -103,6 +136,15 @@ server{
     # 或者
     # return      301 https://$server_name$request_uri;
 }
+
+# 另
+  add_header       X-Served-By $host;
+  proxy_set_header Host $host;
+  proxy_set_header X-Forwarded-Scheme $scheme;
+  proxy_set_header X-Forwarded-Proto  $scheme;
+  proxy_set_header X-Forwarded-For    $remote_addr;
+  proxy_set_header X-Real-IP          $remote_addr;
+  proxy_pass       http://127.0.0.1:8880$request_uri;
 ```
 
 重启`GitLab`:
@@ -156,6 +198,26 @@ irb(main):001:0> Notify.test_email('destination_email@address.com', 'Message Sub
 
 # press enter to test SMTP sending
 ```
+
+## Gitlab 项目域名IP修改
+
+```bash
+`/opt/gitlab/embedded/service/gitlab-rails/config/gitlab.yml`文件以下内容：
+ ## GitLab settings
+  gitlab:
+    ## Web server settings (note: host is the FQDN, do not include http://)
+    host: 192.168.0.104
+    port: 8880
+    https: false
+
+`/etc/gitlab/gitlab.rb`以下内容：
+## Url on which GitLab will be reachable.
+## For more details on configuring external_url see:
+## https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/configuration.md#configuring-the-external-url-for-gitlab
+external_url 'http://192.168.0.104:8880'
+```
+
+重启gitlab服务以生效：`gitlab-ctl restart`
 
 ## 版本升级
 

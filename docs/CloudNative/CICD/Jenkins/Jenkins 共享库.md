@@ -1,0 +1,1 @@
+https://jenkins.io/zh/doc/book/pipeline/shared-libraries/
