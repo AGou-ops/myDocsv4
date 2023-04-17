@@ -86,11 +86,11 @@ java -jar jenkins.war --httpPort=9090
 
 最后, 打开浏览器访问 : http://127.0.0.1:8080 , 等待解锁`Jenkins`即可.([UNLOCK JENKINS](https://www.jenkins.io/doc/book/installing/#unlocking-jenkins))
 
-![](https://cdn.agou-ops.cn/blog-images/CI%26CD/jenkins-1.png)
+![](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/jenkins-1.png)
 
 等待安装插件:
 
-![等待安装插件](https://cdn.agou-ops.cn/blog-images/CI%26CD/jenkins-2.png)
+![等待安装插件](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/jenkins-2.png)
 
 :information_source:国内`Jenkins`插件镜像源: https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json
 
@@ -110,7 +110,7 @@ java -jar jenkins.war --httpPort=9090
 
 成功部署结果:
 
-![](https://cdn.agou-ops.cn/blog-images/CI%26CD/jenkins-3.png)
+![](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/jenkins-3.png)
 
 ## 通过 Docker 安装
 
@@ -166,9 +166,9 @@ $ docker-compose up -d jenkins-compose
 
 :warning:如果安装完插件显示有部分中文异常的情况, 需要再安装`Localization: Chinese (Simplified)`插件试试, 倘若还是不行, 重启`jenkins`, 再重新安装插件试试.
 
-![](https://cdn.agou-ops.cn/blog-images/CI%26CD/jenkins-4.png)
+![](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/jenkins-4.png)
 
-![](https://cdn.agou-ops.cn/blog-images/CI%26CD/jenkins-5.png)
+![](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/jenkins-5.png)
 
 最后重启`jenkins`即可, 打开浏览器访问:
 
@@ -258,10 +258,7 @@ server {
     server_name *.jenkins.localrokcy.com;
     return      301 http://jenkins.localrocky.com$request_uri;
 }
-
 ```
-
-
 
 ## 参考链接
 
@@ -271,4 +268,3 @@ server {
 - "Jenkins 安装插件 No such plugin: cloudbees-folder": https://blog.csdn.net/dhq779626019/article/details/105756115
 - Jenkins Plugins: https://plugins.jenkins.io/
 - Jenkins  Mirrors  status: http://mirrors.jenkins-ci.org/status.html
-
