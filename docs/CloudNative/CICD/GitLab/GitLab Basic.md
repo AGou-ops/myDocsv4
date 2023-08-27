@@ -71,10 +71,10 @@ ARM架构的镜像推荐使用：https://github.com/zengxs/gitlab-docker
 
 ```bash
 $ cat gitlab.rb
-external_url 'http://git.localmac.com'
+external_url 'http://git.nblh.local'
 
-gitlab_rails['gitlab_ssh_host'] = 'git.localmac.com'
-gitlab_rails['gitlab_shell_ssh_port'] = 2222
+gitlab_rails['gitlab_ssh_host'] = 'git.nblh.local'
+gitlab_rails['gitlab_shell_ssh_port'] = 2202
 
 $ docker run \
  -itd  \
@@ -150,7 +150,7 @@ server{
 重启`GitLab`:
 
 ```bash
-gitlab-cli restart
+gitlab-ctl restart
 ```
 
 ## SMTP 邮件设置

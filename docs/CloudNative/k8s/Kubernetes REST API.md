@@ -192,7 +192,7 @@ $ kubectl exec pod-with-kubeapi -c main -- curl  localhost:8001/apis/batch/v1
       ]
     }
   ]
-}208k
+}
 ```
 
 :smile: Success.

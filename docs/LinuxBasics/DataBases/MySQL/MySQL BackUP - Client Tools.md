@@ -44,6 +44,8 @@ LOAD DATA INFILE "./data.txt" INTO TABLE db2.my_table;
 
 ## mysqldump 备份数据库
 
+mysqldump详细参考链接：https://www.cnblogs.com/digdeep/p/4898622.html
+
 mysqldump导出来的数据有两个文件，一个是sql文件，一个是txt文件.
 
 ### 命令格式
@@ -72,8 +74,8 @@ mysqldump [选项] --all-databases [选项]  > 脚本名
 | --port                          | -P   | 服务器端口号                  |
 | --user                          | -u   | MySQL 用户名                  |
 | --pasword                       | -p   | MySQL 密码                    |
-| --databases                     |      | 指定要备份的数据库            |
-| --all-databases                 |      | 备份mysql服务器上的所有数据库 |
+| --databases                     |   -B   | 指定要备份的数据库            |
+| --all-databases                 |  -A   | 备份mysql服务器上的所有数据库 |
 | --compact                       |      | 压缩模式，产生更少的输出      |
 | --comments                      |      | 添加注释信息                  |
 | --complete-insert               |      | 输出完成的插入语句            |
@@ -84,6 +86,36 @@ mysqldump [选项] --all-databases [选项]  > 脚本名
 | --add-locks                     |      | 备份数据库表时锁定数据库表    |
 
 ### 实例
+> Dumping structure and contents of MySQL databases and tables.
+> Usage: mysqldump [OPTIONS] database [tables]
+> OR       mysqldump [OPTIONS] --databases [OPTIONS] DB1 [DB2 DB3...]
+> OR       mysqldump [OPTIONS] --all-databases [OPTIONS]
+> 
+> 1> 导出单表的结构和数据：mysqldump -uxxx -p db1 tb1 > tb1.sql; 导出数据库 db1 中的 表 tb1 的表结构 和 表中数据；
+> 
+> 2> 导出多表的结构和数据：mysqldump -uxxx -p db1 tb1 tb2 > tb1_tb2.sql; 导出数据库 db1 中的 表 tb1、tb2 的表结构 和 表中数据；
+> 
+> 3> 导出单表的结构：mysqldump -uxxx -p --no-data db1 tb1 > tb1.sql; 导出数据库 db1 中的 表 tb1 的表结构; 其实也可以使用: show create table > tb1
+> 
+> 4> 我们无法使用 mysqldump 到达 只导出某个或某几个表的数据，而不导出建表语句的目的。
+> 
+>      但是我们可以使用 select * from table into outfile 'file.sql', 比如：select * from Users into outfile '/tmp/Users.sql'; > 注意需要对目录的写权限。
+> 
+> 5> 导出单个库中库结构、表结构、表数据：mysqldump -uxxx -p --databases db1 > db1.sql
+> 
+> 6> 导出多个库中库结构、表结构、表数据：mysqldump -uxxx -p --databases db1 db2 > db1_db2.sql
+> 
+> 7> 导出单个库中库结构、表结构、不要表数据：mysqldump -uxxx -p --no-data --databases db1 > db1.sql
+> 
+> 8> 导出单个库中数据，不要库结构和表结构：mysqldump -uxxx -p --no-create-db --no-create-info --databases db1 > db1.sql
+> 
+> 9> 导出多个库中库结构、表结构、不要表数据：mysqldump -uxxx -p --no-data --databases db1 db2 > db1_db2.sql
+> 
+> 10> 导出数据库中所有 库 的库结构，表结构，数据：mysqldump -uxxx -p --all-databases > all.sql
+> 
+> 11> 导出数据库中所有 库 的库结构，表结构，不要数据：mysqldump -uxxx -p --all-databases --no-data > all.sql
+> 
+> 12> 导出单个库中库结构、表结构、表数据，排除某个表：mysqldump -uxxx -p --databases db1 --ignore-table=db1.test > db1.sql
 
 备份所有数据库：
 

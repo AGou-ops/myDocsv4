@@ -86,11 +86,11 @@ java -jar jenkins.war --httpPort=9090
 
 最后, 打开浏览器访问 : http://127.0.0.1:8080 , 等待解锁`Jenkins`即可.([UNLOCK JENKINS](https://www.jenkins.io/doc/book/installing/#unlocking-jenkins))
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/jenkins-1.png)
+![](https://cdn.agou-ops.cn/others/jenkins-1.png)
 
 等待安装插件:
 
-![等待安装插件](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/jenkins-2.png)
+![等待安装插件](https://cdn.agou-ops.cn/others/jenkins-2.png)
 
 :information_source:国内`Jenkins`插件镜像源: https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json
 
@@ -110,7 +110,7 @@ java -jar jenkins.war --httpPort=9090
 
 成功部署结果:
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/jenkins-3.png)
+![](https://cdn.agou-ops.cn/others/jenkins-3.png)
 
 ## 通过 Docker 安装
 
@@ -166,9 +166,9 @@ $ docker-compose up -d jenkins-compose
 
 :warning:如果安装完插件显示有部分中文异常的情况, 需要再安装`Localization: Chinese (Simplified)`插件试试, 倘若还是不行, 重启`jenkins`, 再重新安装插件试试.
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/jenkins-4.png)
+![](https://cdn.agou-ops.cn/others/jenkins-4.png)
 
-![](https://agou-images.oss-cn-qingdao.aliyuncs.com/others/jenkins-5.png)
+![](https://cdn.agou-ops.cn/others/jenkins-5.png)
 
 最后重启`jenkins`即可, 打开浏览器访问:
 
@@ -220,31 +220,36 @@ server {
 
     # reverse proxy
     location / {
-        sendfile off;
-        proxy_pass            http://192.168.0.104:8090;
-        proxy_redirect     default;
-        proxy_http_version 1.1;
+			proxy_http_version 1.1;
+			proxy_pass            http://192.168.3.51:8080;
+			proxy_set_header Host      $host;
+			proxy_set_header X-Real-IP $remote_addr;
+			proxy_intercept_errors on;
+			add_header X-uri "$uri";
+			add_header X_host "$host";
+			add_header X_port "$proxy_port";
+			add_header X_remote_addr "$remote_addr";
+			add_header X_proxy_forwaded_for "$proxy_add_x_forwarded_for";
+			proxy_set_header X_scheme $scheme;
+			proxy_set_header X-Forwarded-Host    $host:$server_port;
 
-        # Required for Jenkins websocket agents
-        proxy_set_header   Connection        $connection_upgrade;
-        proxy_set_header   Upgrade           $http_upgrade;
+			proxy_max_temp_file_size 0;
 
-        proxy_set_header   Host              $host;
-        proxy_set_header   X-Real-IP         $remote_addr;
-        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
-        proxy_set_header   X-Forwarded-Proto $scheme;
-        proxy_max_temp_file_size 0;
+			proxy_connect_timeout      90;
+			proxy_send_timeout         90;
+			proxy_read_timeout         90;
 
-        #this is the maximum upload size
-        client_max_body_size       10m;
-        client_body_buffer_size    128k;
+			proxy_buffer_size          4k;
+			proxy_buffers              4 32k;
+			proxy_busy_buffers_size    64k;
+			proxy_temp_file_write_size 64k;
 
-        proxy_connect_timeout      90;
-        proxy_send_timeout         90;
-        proxy_read_timeout         90;
-        proxy_buffering            off;
-        proxy_request_buffering    off; # Required for HTTP CLI commands
-        proxy_set_header Connection ""; # Clear for keepalive
+# Set maximum upload size
+			client_max_body_size       10m;
+			client_body_buffer_size    128k;
+
+			sendfile off;
+
     }
 
     # additional config

@@ -34,6 +34,8 @@ SELECT now(),user(),version();
 SELECT * from information_schema.VIEWS;		-- 查看视图
 SELECT * from information_schema.TABLES;  		-- 查看数据库所有表
 EXPLAIN <sql语句>;		-- 
+show variables like 'log_bin';   -- 查看是否启用binlog日志
+show binary logs;        -- 查看当前服务器使用的biglog文件个数及大小 show binary logs;
 
 -- 慢日志相关
 show variables  like '%slow_query_log%';
@@ -43,6 +45,7 @@ CREATE DATABASE IF NOT EXISTS <DATABASE_NAME> DEFAULT CHARSET utf8 COLLATE utf8_
 SHOW CREATE DATABASE <DATABASE>;
 FLUSH PRIVILEGES;		-- 刷新权限
 SELECT database();		 -- 当前选择的数据库
+DROP DATABASE <DATABASE>;  -- 删除数据库
 
 -- 表级 -- 
 DESC <TABLE_NAME>;		-- 表结构、使用describe、show columns from <table_name>能达到相同效果

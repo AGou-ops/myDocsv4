@@ -79,3 +79,94 @@ curl -XGET http://172.26.127.100:9200/_cluster/health?pretty
 curl -XGET http://172.26.127.100:9200/_cat/nodes?v
 ```
 
+## 使用docker-compose快速部署
+
+```dockerfile
+version: '2.2'
+services:
+  es01:
+    image: elasticsearch:7.10.1
+    container_name: es01
+    environment:
+      - node.name=es01
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es02,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - /usr/es01/node1/data/:/usr/share/elasticsearch/data
+      - /usr/es02/node1/plugins:/usr/share/elasticsearch/plugins
+    ports:
+      - 9200:9200
+    networks:
+      - elastic
+  es02:
+    image: elasticsearch:7.10.1
+    container_name: es02
+    environment:
+      - node.name=es02
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - /usr/es02/node2/data/:/usr/share/elasticsearch/data
+      - /usr/es02/node2/plugins:/usr/share/elasticsearch/plugins
+    networks:
+      - elastic
+  es03:
+    image: elasticsearch:7.10.1
+    container_name: es03
+    environment:
+      - node.name=es03
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01,es02
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - /usr/es03/node3/data/:/usr/share/elasticsearch/data
+      - /usr/es03ß/node3/plugins:/usr/share/elasticsearch/plugins
+    networks:
+      - elastic
+  kibana:
+    image: kibana:7.10.1
+    container_name: kibana
+    environment:
+      SERVER_NAME: kibana
+      ELASTICSEARCH_HOSTS: http://es01:9200
+      ELASTICSEARCH_URL: http://es01:9200
+    ports:
+      - 5601:5601
+    # volumes:
+    #  - g:/kibana/config:/usr/share/kibana/config
+    networks:
+      - elastic
+
+  cerebro:
+    image: lmenezes/cerebro:latest
+    container_name: cerebro
+    ports:
+      - 9000:9000
+    networks:
+      - elastic
+
+networks:
+  elastic:
+    driver: bridge
+```
+

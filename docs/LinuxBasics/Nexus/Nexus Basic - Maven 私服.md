@@ -97,7 +97,7 @@ chmod 755 nexus-data
 执行以下命令即可，会自动拉取镜像并启动
 
 ```bash
-docker run -d -p 8081:8081 --name nexus -v /data/nexus-data:/nexus-data --restart=always sonatype/nexus3
+docker run -d -p 8081:8081 --ulimit nofile=65536:65536 --name nexus -v /data/nexus-data:/nexus-data --restart=always sonatype/nexus3
 ```
 
 通过`docker logs -f nexus`查看启动日志，当出现`Started Sonatype Nexus OSS`说明启动成功，这时通过`http://ip:8081`即可访问

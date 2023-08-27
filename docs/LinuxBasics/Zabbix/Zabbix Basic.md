@@ -151,6 +151,22 @@ Server=172.16.1.130
 2. 添加一个`监控项`
 3. 在监控选项卡中查看`最新数据`
 
+### 主动模式
+
+修改配置文件：
+
+```bash
+PidFile=/var/run/zabbix/zabbix_agent.pid
+LogFile=/var/1og/zabbix/zabbix_agent.log
+LogFilesize=0
+Server=10.211.55.10
+ServerActive=10.211.55.10
+Hostname=zbx-agent01
+HostnameItem=system.hostname
+Include=/etc/zabbix/zabbix_agent.d/*.conf
+ControlSocket=/tmp/agenf.sock
+```
+
 ## 前端web页面部分中文显示乱码
 
 问题原因：zabbix 前端默认使用的字体跟中文不兼容导致

@@ -23,8 +23,10 @@ docker volume create portainer_data
 ```bash
 # 如果想要Portainer管理本地容器的话，使用以下命令：
 docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data --restart=always --name prtainer portainer/portainer
-# 如果想要Portainer管理远程容器的话，使用以下命令：
-docker run -d -p 9000:9000 -v portainer_data:/data portainer/portainer
+# 如果想要Portainer管理远程容器的话，使用以下命令： -v "/var/run/docker.sock:/var/run/docker.sock"
+    docker run -d --restart always --name portainer -p 9000:9000 -v `pwd`/portainer_data:/data portainer/portainer:latest
+# 管理其他主机的Docker
+    docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/volumes:/var/lib/docker/volumes portainer/agent:latest
 ```
 
 此时，打开浏览器，进入 http://PORTAINTER_IP:9000 即可访问.

@@ -111,17 +111,27 @@ mysql> REVOKE ALL PRIVILEGES FROM `USER_NAME`@`%`;	 -- 回收所有权限
 首先关闭数据库`service mysqld stop`
 
 ```bash
+$ systemctl stop  mysql.service
+$ ps -eaf|grep mysql
+$ mysqld_safe --skip-grant-tables &
 # --skip-grant-tables 的意思是启动MySQL服务的时候跳过权限表认证。
 mysqld_safe --skip-grant-table --user=mysql &
 # 使用空密码登录MySQL
 mysql -uroot
+
+UPDATE mysql.user SET authentication_string=null WHERE User='root';
+FLUSH PRIVILEGES;
+ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY '123';
+
 ```
 
 ```sql
 # 5.7以下版本
 mysql> update mysql.user set password=password('新密码') where user='root' and host='localhost';
 # 5.7以上版本
-mysql> update user set authentication_string=password('新密码') where user='root' and Host='localhost';
+mysql> update mysql.user set authentication_string=password('123') where user='root' and Host='localhost';
+ALTER USER 'root'@'localhost' IDENTIFIED BY '123';
+
 
 mysql> flush privileges;
 ```

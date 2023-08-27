@@ -4,18 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "deeef403d3a32635",
+        "id": "64d476f81cc7bb39",
         "type": "tabs",
         "children": [
           {
-            "id": "bd4357832dbaa6fd",
+            "id": "c4fc81c61e29bae3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LinuxBasics/keepalived.md",
+                "file": "CloudNative/k8s/Installation/k8s Debian12二进制安装.md",
                 "mode": "source",
-                "source": false
+                "source": true
               }
             }
           }
@@ -64,13 +64,20 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "0d1a60a748687ee3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "15db186627dbeec5",
@@ -86,8 +93,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "LinuxBasics/keepalived.md",
-                "collapseAll": false,
+                "file": "CloudNative/k8s/Installation/k8s Debian12二进制安装.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -103,9 +110,9 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "LinuxBasics/keepalived.md",
+                "file": "CloudNative/k8s/Installation/k8s Debian12二进制安装.md",
                 "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -126,31 +133,57 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "LinuxBasics/keepalived.md"
+                "file": "CloudNative/k8s/Installation/k8s Debian12二进制安装.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 299.5
   },
   "left-ribbon": {
     "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "homepage:Open homepage": false
     }
   },
-  "active": "954d4d4aee544375",
+  "active": "c4fc81c61e29bae3",
   "lastOpenFiles": [
-    "LinuxBasics/lvm 讲解.md",
+    "CloudNative/k8s/Installation/Kubeadm 快速部署手册.md",
+    "CloudNative/k8s/Installation/Kubernetes 二进制安装.md",
+    "CloudNative/k8s/Installation/k8s Debian12二进制安装.md",
+    "CloudNative/k8s/Installation/使用 Kubeadm 部署（单master）.md",
+    "CloudNative/k8s/Installation/常用组件安装.md",
+    "CloudNative/k8s/Installation/使用 Kubespray 部署.md",
+    "CloudNative/Prometheus/Prometheus in Docker.md",
+    "CloudNative/Prometheus/Prometheus-Consul（服务发现）.md",
+    "CloudNative/k8s/Installation/使用国内源及相关小工具.md",
+    "Home.md",
+    "CloudNative/Prometheus/Prometheus-AlertManager.md",
+    "CloudNative/Prometheus/Prometheus 进阶.md",
+    "CloudNative/Prometheus/Prometheus 安装与部署、Grafana.md",
+    "CloudNative/Prometheus/influxDB、Telegraf Basic.md",
     "未命名.canvas",
-    "2023-02-28.md"
+    "LinuxBasics/DataBases/MySQL/MySQL Auth CLI.md",
+    "LinuxBasics/DataBases/MySQL/MySQL 快速手册.md",
+    "LinuxBasics/WireGuard VPN for Ubuntu.md",
+    "LinuxBasics/未命名.md",
+    "LinuxBasics/蓝鲸运维平台.md",
+    "CloudNative/CICD/Jenkins/Jenkins 删除构建历史.md",
+    "CloudNative/CICD/Jenkins/Generic Webhook Trigger.md",
+    "CloudNative/CICD/Jenkins/Docker Jenkins 执行宿主机命令.md",
+    "CloudNative/CICD/Jenkins/Jenkins 共享库.md",
+    "LinuxBasics/DataBases/MySQL/MySQL BackUP - Client Tools.md",
+    "LinuxBasics/DataBases/MySQL/MySQL 约束.md",
+    "LinuxBasics/DataBases/MySQL/MySQL 小技巧.md"
   ]
 }

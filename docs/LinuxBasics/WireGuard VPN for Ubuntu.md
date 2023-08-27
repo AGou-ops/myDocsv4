@@ -1,4 +1,4 @@
-# WireGuard VPN for Ubuntu 
+# WireGuard VPN for Ubuntu
 
 ## WireGuard 简介
 

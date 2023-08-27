@@ -77,3 +77,13 @@ gitlab-rake gitlab:backup:restore BACKUP=1543846302_2020_7_23
 
 
 另：https://blog.51cto.com/jiangxl/4637789
+
+
+
+
+
+
+
+```bash
+```
+
