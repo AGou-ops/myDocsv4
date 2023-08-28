@@ -1,34 +1,34 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'AGou\'s Docsv4',
-  tagline: 'Welcome to AGou\'s Docs.',
-  url: 'https://docs.agou-ops.cn',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.png',
+  title: "AGou's Docsv4",
+  tagline: "Welcome to AGou's Docs.",
+  url: "https://docs.agou-ops.cn",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.png",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'AGou-ops', // Usually your GitHub org/user name.
-  projectName: '/', // Usually your repo name.
+  organizationName: "AGou-ops", // Usually your GitHub org/user name.
+  projectName: "/", // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   plugins: [
-    require.resolve('docusaurus-plugin-image-zoom'),
+    require.resolve("docusaurus-plugin-image-zoom"),
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       {
@@ -36,22 +36,21 @@ const config = {
         indexBlog: false,
         language: ["en", "zh"],
       },
-    ]
+    ],
   ],
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: "https://github.com/AGou-ops/myDocsv4/edit/main/",
         },
-        blog: false,      // 暂时禁用。
+        blog: false, // 暂时禁用。
         // blog: {
         //   showReadingTime: true,
         //   // Please change this to your repo.
@@ -60,10 +59,10 @@ const config = {
         //     'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         // },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
         googleAnalytics: {
-          trackingID: 'G-KQED41RW95',
+          trackingID: "G-KQED41RW95",
           anonymizeIP: true,
         },
         pages: {
@@ -91,80 +90,80 @@ const config = {
     ({
       navbar: {
         hideOnScroll: true,
-        title: 'AGou\'s Docsv4',
+        title: "AGou's Docsv4",
         logo: {
-          alt: 'Welcome to AGou\'s Docs!',
-          src: 'img/logo.png',
+          alt: "Welcome to AGou's Docs!",
+          src: "img/logo.png",
         },
         items: [
           {
-            label: '✨ 我的博客',
-            href: 'https://agou-ops.cn'
+            label: "✨ 我的博客",
+            href: "https://agou-ops.cn",
           },
           {
-            type: 'dropdown',
-            label: ' 📖 目录',
-            position: 'right',
+            type: "dropdown",
+            label: " 📖 目录",
+            position: "right",
             items: [
               {
-                href: '/docs',
-                label: '🌲 目录树',
+                href: "/docs",
+                label: "🌲 目录树",
               },
               {
-                type: 'html',
+                type: "html",
                 value: '<hr style="margin: 0.3rem 0;">',
               },
               {
-                type: 'docSidebar',
-                sidebarId: 'cloudNative',
-                label: '☁️ 云原生相关',
+                type: "docSidebar",
+                sidebarId: "cloudNative",
+                label: "☁️ 云原生相关",
               },
               {
-                type: 'docSidebar',
-                sidebarId: 'linuxBasics',
-                label: '😊 Linux基础',
+                type: "docSidebar",
+                sidebarId: "linuxBasics",
+                label: "😊 Linux基础",
               },
               {
-                type: 'docSidebar',
-                sidebarId: 'programLang',
-                label: '♨️ 编程语言',
+                type: "docSidebar",
+                sidebarId: "programLang",
+                label: "♨️ 编程语言",
               },
               {
-                type: 'docSidebar',
-                sidebarId: 'scripts',
-                label: '🕹️ 脚本相关',
+                type: "docSidebar",
+                sidebarId: "scripts",
+                label: "🕹️ 脚本相关",
               },
               {
-                type: 'docSidebar',
-                sidebarId: 'interview',
-                label: '👨‍⚖️ 面试相关',
+                type: "docSidebar",
+                sidebarId: "interview",
+                label: "👨‍⚖️ 面试相关",
               },
             ],
           },
           {
-            type: 'dropdown',
-            label: '版本',
-            position: 'right',
+            type: "dropdown",
+            label: "版本",
+            position: "right",
             items: [
               {
-                label: 'Ver1.0',
-                href: 'https://agou-ops.cn/myDocs',
+                label: "Ver1.0",
+                href: "https://agou-ops.cn/myDocs",
               },
               {
-                label: 'Ver2.0',
-                href: 'https://agou-ops.cn/myDocsv2',
+                label: "Ver2.0",
+                href: "https://agou-ops.cn/myDocsv2",
               },
               {
-                label: 'Ver3.0',
-                href: 'https://agou-ops.cn/myDocsv3',
+                label: "Ver3.0",
+                href: "https://agou-ops.cn/myDocsv3",
               },
-            ]
+            ],
           },
           {
-            href: 'https://github.com/AGou-ops',
-            position: 'right',
-            className: 'header-github-link',
-            'aria-label': 'GitHub 仓库',
+            href: "https://github.com/AGou-ops",
+            position: "right",
+            className: "header-github-link",
+            "aria-label": "GitHub 仓库",
           },
         ],
       },
@@ -175,57 +174,57 @@ const config = {
         },
       },
       zoom: {
-        selector: '.markdown :not(em) > img',
+        selector: ".markdown :not(em) > img",
         background: {
-          light: 'rgb(255, 255, 255)',
-          dark: 'rgb(50, 50, 50)'
+          light: "rgb(255, 255, 255)",
+          dark: "rgb(50, 50, 50)",
         },
         // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
-        config: {}
+        config: {},
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'Docs Releases',
+            title: "Docs Releases",
             items: [
               {
-                label: 'Version 1.0',
-                href: 'https://agou-ops.cn/myDocs',
+                label: "Version 1.0",
+                href: "https://agou-ops.cn/myDocs",
               },
               {
-                label: 'Version 2.0',
-                href: 'https://agou-ops.cn/myDocsv2',
+                label: "Version 2.0",
+                href: "https://agou-ops.cn/myDocsv2",
               },
               {
-                label: 'Version 3.0',
-                href: 'https://agou-ops.cn/myDocsv3',
+                label: "Version 3.0",
+                href: "https://agou-ops.cn/myDocsv3",
               },
               {
-                label: '⭐️Version 4.0',
-                href: 'https://agou-ops.cn/myDocsv4',
+                label: "⭐️Version 4.0",
+                href: "https://agou-ops.cn/myDocsv4",
               },
             ],
           },
           {
-            title: 'Social',
+            title: "Social",
             items: [
               {
-                label: '⭐️我的博客',
-                href: 'https://agou-ops.cn',
+                label: "⭐️我的博客",
+                href: "https://agou-ops.cn",
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/',
+                label: "Twitter",
+                href: "https://twitter.com/",
               },
             ],
           },
           {
-            title: 'More',
+            title: "More",
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/AGou-ops',
+                label: "GitHub",
+                href: "https://github.com/AGou-ops",
               },
             ],
           },
@@ -239,7 +238,7 @@ const config = {
         // vsDark, duotoneDark, github, nightOwlLight, `okaidia, shadesOfPurple, ultramin, vsLight
         // theme: require('prism-react-renderer/themes/nightOwl'),
         // darkTheme: darkCodeTheme,
-        darkTheme: require('prism-react-renderer/themes/nightOwl'),
+        darkTheme: require("prism-react-renderer/themes/nightOwl"),
       },
     }),
 };
