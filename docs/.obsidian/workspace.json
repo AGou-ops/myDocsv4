@@ -4,18 +4,30 @@
     "type": "split",
     "children": [
       {
-        "id": "64d476f81cc7bb39",
+        "id": "25524e595ebba3a2",
         "type": "tabs",
         "children": [
           {
-            "id": "c4fc81c61e29bae3",
+            "id": "ba9d77445889ee1d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "LinuxBasics/DataBases/Etcd/etcdctl 快速手册.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "a0a1f854e3c8c0ea",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "CloudNative/k8s/Installation/k8s Debian12二进制安装.md",
                 "mode": "source",
-                "source": true
+                "source": false
               }
             }
           }
@@ -93,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CloudNative/k8s/Installation/k8s Debian12二进制安装.md",
+                "file": "LinuxBasics/DataBases/Etcd/etcdctl 快速手册.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CloudNative/k8s/Installation/k8s Debian12二进制安装.md",
+                "file": "LinuxBasics/DataBases/Etcd/etcdctl 快速手册.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -133,8 +145,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CloudNative/k8s/Installation/k8s Debian12二进制安装.md"
+                "file": "LinuxBasics/DataBases/Etcd/etcdctl 快速手册.md"
               }
+            }
+          },
+          {
+            "id": "425e2274dc6de301",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
             }
           }
         ],
@@ -156,34 +176,35 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "c4fc81c61e29bae3",
+  "active": "ba9d77445889ee1d",
   "lastOpenFiles": [
+    "LinuxBasics/DataBases/Etcd/etcd Basic.md",
+    "LinuxBasics/DataBases/Etcd/etcd 备份与恢复.md",
+    "LinuxBasics/DataBases/Etcd/etcdctl 快速手册.md",
+    "CloudNative/k8s/Installation/k8s Debian12二进制安装.md",
+    "CloudNative/Docker/Docker 示例及多架构构建.md",
+    "LinuxBasics/DataBases/Etcd",
+    "CloudNative/Docker/DockerFile.md",
+    "CloudNative/Docker/SSH Docker container.md",
+    "CloudNative/Docker/Docker Volume.md",
+    "CloudNative/Docker/Docker Remote Access.md",
+    "CloudNative/Docker/Docker Private Registry.md",
+    "CloudNative/Docker/Docker Portainer.md",
+    "CloudNative/Docker/Docker Network.md",
+    "CloudNative/Docker/Docker openvswitch.md",
+    "CloudNative/Docker/Docker Compose.md",
+    "CloudNative/Docker/Docker Basic.md",
+    "CloudNative/Docker/Docker 容器间通过主机名互相访问.md",
+    "CloudNative/Docker/Docker 清理.md",
+    "CloudNative/Docker/Docker 固定IP及跨主机互通.md",
+    "Home.md",
+    "Interview/工作面试题/资深运维架构设计规划.md",
     "CloudNative/k8s/Installation/Kubeadm 快速部署手册.md",
     "CloudNative/k8s/Installation/Kubernetes 二进制安装.md",
-    "CloudNative/k8s/Installation/k8s Debian12二进制安装.md",
     "CloudNative/k8s/Installation/使用 Kubeadm 部署（单master）.md",
     "CloudNative/k8s/Installation/常用组件安装.md",
     "CloudNative/k8s/Installation/使用 Kubespray 部署.md",
     "CloudNative/Prometheus/Prometheus in Docker.md",
-    "CloudNative/Prometheus/Prometheus-Consul（服务发现）.md",
-    "CloudNative/k8s/Installation/使用国内源及相关小工具.md",
-    "Home.md",
-    "CloudNative/Prometheus/Prometheus-AlertManager.md",
-    "CloudNative/Prometheus/Prometheus 进阶.md",
-    "CloudNative/Prometheus/Prometheus 安装与部署、Grafana.md",
-    "CloudNative/Prometheus/influxDB、Telegraf Basic.md",
-    "未命名.canvas",
-    "LinuxBasics/DataBases/MySQL/MySQL Auth CLI.md",
-    "LinuxBasics/DataBases/MySQL/MySQL 快速手册.md",
-    "LinuxBasics/WireGuard VPN for Ubuntu.md",
-    "LinuxBasics/未命名.md",
-    "LinuxBasics/蓝鲸运维平台.md",
-    "CloudNative/CICD/Jenkins/Jenkins 删除构建历史.md",
-    "CloudNative/CICD/Jenkins/Generic Webhook Trigger.md",
-    "CloudNative/CICD/Jenkins/Docker Jenkins 执行宿主机命令.md",
-    "CloudNative/CICD/Jenkins/Jenkins 共享库.md",
-    "LinuxBasics/DataBases/MySQL/MySQL BackUP - Client Tools.md",
-    "LinuxBasics/DataBases/MySQL/MySQL 约束.md",
-    "LinuxBasics/DataBases/MySQL/MySQL 小技巧.md"
+    "未命名.canvas"
   ]
 }
