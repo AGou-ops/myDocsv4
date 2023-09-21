@@ -4,34 +4,59 @@
     "type": "split",
     "children": [
       {
-        "id": "25524e595ebba3a2",
+        "id": "3f9bb088f282d330",
         "type": "tabs",
         "children": [
           {
-            "id": "ba9d77445889ee1d",
+            "id": "f4dbe431c4f85eb2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LinuxBasics/DataBases/Etcd/etcdctl 快速手册.md",
+                "file": "LinuxBasics/DataBases/MySQL/MySQL BackUP - Client Tools.md",
                 "mode": "source",
                 "source": true
               }
             }
           },
           {
-            "id": "a0a1f854e3c8c0ea",
+            "id": "a8f2c9c01e62d86d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CloudNative/k8s/Installation/k8s Debian12二进制安装.md",
+                "file": "CloudNative/k8s/小技巧/使用curl访问k8s的REST API.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "407a8af764cf71c3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CloudNative/k8s/Helm/Helm Basic.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "23d9cf92da1ac8aa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CloudNative/k8s/实战案例/k8s中使用traefik（基础）.md",
+                "mode": "source",
+                "source": true
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -105,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "LinuxBasics/DataBases/Etcd/etcdctl 快速手册.md",
+                "file": "CloudNative/k8s/实战案例/k8s中使用traefik（基础）.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "LinuxBasics/DataBases/Etcd/etcdctl 快速手册.md",
+                "file": "CloudNative/k8s/实战案例/k8s中使用traefik（基础）.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -134,7 +159,7 @@
             "state": {
               "type": "tag",
               "state": {
-                "sortOrder": "frequency",
+                "sortOrder": "alphabetical",
                 "useHierarchy": true
               }
             }
@@ -145,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "LinuxBasics/DataBases/Etcd/etcdctl 快速手册.md"
+                "file": "CloudNative/k8s/实战案例/k8s中使用traefik（基础）.md"
               }
             }
           },
@@ -166,45 +191,45 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
+      "canvas:新建白板": true,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "homepage:Open homepage": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ba9d77445889ee1d",
+  "active": "23d9cf92da1ac8aa",
   "lastOpenFiles": [
-    "LinuxBasics/DataBases/Etcd/etcd Basic.md",
-    "LinuxBasics/DataBases/Etcd/etcd 备份与恢复.md",
-    "LinuxBasics/DataBases/Etcd/etcdctl 快速手册.md",
     "CloudNative/k8s/Installation/k8s Debian12二进制安装.md",
-    "CloudNative/Docker/Docker 示例及多架构构建.md",
-    "LinuxBasics/DataBases/Etcd",
-    "CloudNative/Docker/DockerFile.md",
-    "CloudNative/Docker/SSH Docker container.md",
-    "CloudNative/Docker/Docker Volume.md",
-    "CloudNative/Docker/Docker Remote Access.md",
-    "CloudNative/Docker/Docker Private Registry.md",
-    "CloudNative/Docker/Docker Portainer.md",
-    "CloudNative/Docker/Docker Network.md",
-    "CloudNative/Docker/Docker openvswitch.md",
+    "CloudNative/k8s/实战案例/k8s中使用traefik（基础）.md",
+    "CloudNative/k8s/实战案例/使用CSR API创建用户.md",
+    "CloudNative/k8s/实战案例/RBAC 实战案例.md",
+    "LinuxBasics/DataBases/MySQL/MySQL Auth CLI.md",
+    "LinuxBasics/DataBases/MySQL/MySQL 快速手册.md",
+    "CloudNative/k8s/实战案例/cert-manager自动颁发证书.md",
+    "CloudNative/k8s/Kubernetes REST API.md",
+    "CloudNative/k8s/kompose Basic.md",
+    "LinuxBasics/DataBases/MySQL/MySQL BackUP - Client Tools.md",
+    "CloudNative/k8s/小技巧/使用curl访问k8s的REST API.md",
+    "CloudNative/k8s/Helm/Helm Basic.md",
+    "CloudNative/k8s/未命名.md",
+    "CloudNative/k8s/小技巧",
+    "CloudNative/CICD/ArgoCD Basic.md",
+    "CloudNative/Istio Basic.md",
+    "CloudNative/CICD/Jenkins/Jenkins 删除构建历史.md",
+    "CloudNative/k8s/实战案例/jenkins结合.md",
+    "LinuxBasics/Ansible/Ansible inventory.md",
+    "LinuxBasics/Ansible/Ansible Best Practices.md",
+    "LinuxBasics/Ansible/Ansible Basic.md",
+    "LinuxBasics/DataBases/MySQL/ansible.md",
+    "CloudNative/k8s/实战案例/helm安装zookeeper集群.md",
+    "CloudNative/k8s/实战案例/SpringCloud微服务电商系统在Kubernetes集群中上线详细教程.md",
+    "CloudNative/k8s/实战案例/k8s安装Apollo配置中心.md",
+    "LinuxBasics/DataBases/MySQL/MySQL Cluster.md",
     "CloudNative/Docker/Docker Compose.md",
-    "CloudNative/Docker/Docker Basic.md",
-    "CloudNative/Docker/Docker 容器间通过主机名互相访问.md",
-    "CloudNative/Docker/Docker 清理.md",
-    "CloudNative/Docker/Docker 固定IP及跨主机互通.md",
-    "Home.md",
-    "Interview/工作面试题/资深运维架构设计规划.md",
-    "CloudNative/k8s/Installation/Kubeadm 快速部署手册.md",
-    "CloudNative/k8s/Installation/Kubernetes 二进制安装.md",
-    "CloudNative/k8s/Installation/使用 Kubeadm 部署（单master）.md",
-    "CloudNative/k8s/Installation/常用组件安装.md",
-    "CloudNative/k8s/Installation/使用 Kubespray 部署.md",
-    "CloudNative/Prometheus/Prometheus in Docker.md",
+    "LinuxBasics/DataBases/Etcd",
     "未命名.canvas"
   ]
 }

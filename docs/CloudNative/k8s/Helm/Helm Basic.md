@@ -135,6 +135,10 @@ $ helm dependency update
 ```
 
 
+- 本地修改value更新
+```bash
+helm upgrade -f values.yaml rancher-monitor . -n cattle-monitoring-system --version 0.59.1
+```
 
 ## 自定义`chart`
 

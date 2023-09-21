@@ -72,7 +72,6 @@ ln -s /usr/src/kernels/3.10.0-1062.18.1.el7.x86_64 /lib/modules/$(uname -r)/buil
 ```bash
 cd openvswitch-2.5.9
 rpmbuild -bb --without check rhel/openvswitch.spec
-
 ```
 
 6. 最后安装所生成的 RPM 包

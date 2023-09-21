@@ -47,6 +47,7 @@ FLUSH PRIVILEGES;		-- 刷新权限
 SELECT database();		 -- 当前选择的数据库
 DROP DATABASE <DATABASE>;  -- 删除数据库
 
+
 -- 表级 -- 
 DESC <TABLE_NAME>;		-- 表结构、使用describe、show columns from <table_name>能达到相同效果
 SELECT user,host,password FROM mysql.user;		-- 显示表中的制定字段
@@ -250,6 +251,7 @@ GRANT CREATE,EXECUTE,INSERT,DELETE,SELECT ON *.* TO usertest1@'%' IDENTIFIED BY 
 SHOW GRANTS FOR usertest1@'%';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '1234' WITH GRANT OPTION;  
 flush privileges;  
+REVOKE 权限列表 ON 数据库.* FROM '用户名'@'主机名';
 ```
 
 详情查看[MySQL Auth CLI.md](./MySQL Auth CLI.md)
