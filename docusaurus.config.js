@@ -26,6 +26,13 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
+  scripts: [
+    {
+      src: 'http://23.94.25.11:38080/script.js',
+      async: true,
+      "data-website-id": "dc1ebecd-127f-4df7-bd12-bc3d0cc31998"
+    },
+  ],
 
   plugins: [
     require.resolve("docusaurus-plugin-image-zoom"),

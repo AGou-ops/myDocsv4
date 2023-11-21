@@ -13,4 +13,11 @@ ETCDCTL_API=3 etcdctl --data-dir="/var/lib/etcd-backup" \
 --cert=/etc/kubernetes/pki/etcd/server.crt \  
 --key=/etc/kubernetes/pki/etcd/server.key \  
 snapshot restore backup.db
+
+# 另外
+etcdctl snapshot restore /usr/local/etcd-v3.4.27/snapshot/snapshot.db \
+--name etcd-server-159 \
+--initial-cluster=etcd-server-157=https://172.19.82.157:2380,etcd-server-158=https://172.19.82.158:2380,etcd-server-159=https://172.19.82.159:2380 \
+  --initial-advertise-peer-urls=https://172.19.82.159:2380 \
+  --data-dir=/data/etcd
 ```
